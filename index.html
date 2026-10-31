@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan S. Alburo | Great Books Digital Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0914;
+            color: #e2e8f0;
+        }
+        .font-serif-title {
+            font-family: 'Cinzel', serif;
+        }
+        .glass-card {
+            background: rgba(22, 18, 38, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 215, 0, 0.12);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 24, 52, 0.8);
+            border-color: rgba(234, 179, 8, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(234, 179, 8, 0.15);
+        }
+        .glass-nav {
+            background: rgba(11, 9, 20, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFF5C0 0%, #EAB308 50%, #CA8A04 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-ambient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .ambient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.25;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-yellow-500/30 selection:text-yellow-200">
+
+    <!-- Ambient Glow Background -->
+    <div class="bg-ambient">
+        <div class="ambient-orb w-[600px] h-[600px] bg-purple-900 -top-40 -left-40"></div>
+        <div class="ambient-orb w-[500px] h-[500px] bg-amber-700 top-1/2 right-0"></div>
+        <div class="ambient-orb w-[700px] h-[700px] bg-indigo-950 bottom-0 left-1/3"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav px-6 py-4 transition-all duration-300">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <i data-lucide="book-open" class="w-7 h-7 text-amber-400 transition-transform group-hover:rotate-6"></i>
+                <span class="font-serif-title font-bold text-lg md:text-xl tracking-wider gold-gradient-text">RENAN S. ALBURO</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-6 text-sm font-medium tracking-wide">
+                <a href="#profile" class="hover:text-amber-400 transition-colors">Profile</a>
+                <a href="#analyses" class="hover:text-amber-400 transition-colors">7 Analyses</a>
+                <a href="#favorite" class="hover:text-amber-400 transition-colors">Favorite Work</a>
+                <a href="#summary" class="hover:text-amber-400 transition-colors">Summary of Learning</a>
+                <a href="#reflection" class="hover:text-amber-400 transition-colors">Reflection</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 space-y-28">
+
+        <!-- Hero Banner -->
+        <section id="hero" class="text-center py-12 relative">
+            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-amber-500/30 text-amber-300 text-xs tracking-widest uppercase mb-6">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                <span>Culminating Performance Task</span>
+            </div>
+            <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                My Literary Journey
+            </h1>
+            <p class="font-serif-title text-xl sm:text-2xl gold-gradient-text mt-3 font-semibold">
+                A Great Books Digital Portfolio
+            </p>
+            <p class="max-w-2xl mx-auto mt-6 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
+                Bridging the logical precision of Information Technology with the timeless wisdom, human values, and moral insight of world literature.
+            </p>
+        </section>
+
+        <!-- SECTION 1: Student Profile -->
+        <section id="profile" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="flex flex-col lg:flex-row items-center gap-10">
+                    <div class="relative shrink-0">
+                        <div class="w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-amber-400/40 shadow-2xl relative z-10">
+                            <!-- Linked to profile.jpg for GitHub Pages deployment -->
+                            <img src="profile.jpg" alt="Renan S. Alburo" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-purple-600 rounded-2xl blur-lg opacity-40 z-0"></div>
+                    </div>
+
+                    <div class="space-y-6 text-center lg:text-left">
+                        <div>
+                            <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-3">
+                                <span class="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold">BSIT - 4th Year</span>
+                                <span class="px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs font-semibold">Great Books-GEC-GB-NRs</span>
+                            </div>
+                            <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white">Renan S. Alburo</h2>
+                            <p class="text-amber-400 text-sm font-medium mt-1">Naga, Camarines Sur • Student & Reader of Literature</p>
+                        </div>
+
+                        <div class="space-y-4 text-slate-300 text-sm md:text-base leading-relaxed">
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-amber-400/80 font-bold mb-1">Personal Introduction</h3>
+                                <p>I am a dedicated IT student from Naga, Camarines Sur, who loves exploring not just codes and systems, but also stories that teach us about life, values, and human nature. While my focus is technology, I believe that literature helps me understand people better — which is important because technology is built to serve people. I am curious, eager to learn, and always looking for lessons that I can apply both in my studies and in my daily life.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-amber-400/80 font-bold mb-1">Personal Interests in Literature</h3>
+                                <p>As an IT student, I spend most of my time with logic and systems, but literature gives me a different kind of insight — it helps me understand emotions, relationships, and human values. I am interested in how timeless stories can shape our character and guide our decisions. Reading Great Books helps me see the bigger picture: behind every app, system, or innovation are people, and these stories teach me how to respect, value, and serve them better.</p>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xs uppercase tracking-wider text-amber-400/80 font-bold mb-1">Expectations & Learning Experiences</h3>
+                                <p>In this course, I expect to discover deeper meanings behind the world’s most beloved stories and learn how to see different perspectives through literary lenses. I look forward to building wisdom, strengthening my character, and connecting timeless lessons to my own life and future career. I believe studying Great Books will not only improve my reading and thinking skills but also help me become a more compassionate, responsible, and thoughtful person — someone who creates technology that truly helps and respects others.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Compilation of 7 Literary Analyses -->
+        <section id="analyses" class="scroll-mt-28">
+            <div class="text-center mb-12">
+                <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white">Compilation of Seven Literary Analyses</h2>
+                <p class="text-slate-400 mt-2 text-sm md:text-base">Explorations of timeless masterpieces analyzed through distinct critical lenses.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- 1. Book of Job -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="Whirlwind" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Moral Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">The Voice Out of the Whirlwind</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">From the Book of Job (Biblical text)</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems — but this story teaches me that no matter how skilled I become, I cannot understand everything, especially the deeper mysteries of life, suffering, and purpose. Job’s experience shows that true faith and humility mean trusting God and accepting our limitations, knowing that not every question has an immediate technical answer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Panchatantra -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80" alt="Forest Friends" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Moral / Didactic Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Panchatantra — Books 1 & 2</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">Attributed to Vishnu Sharma</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow — a reminder that misinformation harms not just individuals but whole groups. Book 2 shows the opposite: four very different animals working together to survive, proving that true strength comes from unity, loyalty, and standing by each other. This teaches me that in both life and tech projects, open communication and trust are key to success.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. Ramayana -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80" alt="Ramayana" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Cultural Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Ramayana</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">Attributed to Valmiki</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain — even when the path is difficult. His dedication to duty inspires me to carry out my responsibilities with honesty, whether in my personal life, academic work, or future career in IT. It reminds me that short cuts and easy choices can never replace character and moral principle.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Mahabharata -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=600&q=80" alt="Chariot Battlefield" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Humanist Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Mahabharata</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">Attributed to Vyasa</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The Mahabharata reveals that life and choices are rarely simple — there is often no purely good or purely evil side, and even honorable people make mistakes. The story teaches that loyalty to family is important, but loyalty to what is just matters more. Through the concept of Karma, it reminds me that every action has consequences. As a future tech developer, this inspires me to think carefully about the impact of what I create, ensuring my work always serves the truth and fair principles.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. The Odyssey -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80" alt="Seafaring Voyage" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Archetypal Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">The Odyssey</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">Attributed to Homer</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            The Odyssey is more than an adventure story — it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays, yet he keeps moving forward because he holds fast to what he loves. His story reminds me that success requires patience, resilience, and self-control. When I encounter failures or setbacks in my studies or personal projects, I am encouraged to stay focused on my ultimate goal and never give up.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Les Misérables -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=600&q=80" alt="Candlesticks Light" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Social / Moral Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Les Misérables</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">Victor Hugo</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made or how society labels us, we can always choose to become better. It challenges me to see people with compassion rather than strict judgment, reminding me that true progress — whether personal, societal, or technological — should aim to lift others up and show understanding.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 7. Psalm 91 -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
+                            <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=600&q=80" alt="Light in Darkness" class="w-full h-full object-cover">
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Spiritual Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Psalm 91</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">From the Holy Scriptures</p>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come — but that we will face them with confidence, knowing God is our refuge. As a student carrying the weights of academic stress and personal challenges, this Psalm reassures me that peace comes from trusting in divine protection and staying rooted in hope.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: Favorite Literary Masterpiece -->
+        <section id="favorite" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div class="text-center">
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 3 Showcase</span>
+                        <h2 class="font-serif-title text-3xl md:text-5xl font-bold text-white mt-3">My Favorite Literary Masterpiece</h2>
+                        <p class="font-serif-title text-xl text-amber-400 mt-2">Panchatantra — Book 1 and Book 2</p>
+                        <p class="text-slate-400 text-xs">Attributed to Vishnu Sharma</p>
+                    </div>
+
+                    <div class="space-y-6 text-slate-300 text-base leading-relaxed">
+                        <div class="glass-card rounded-2xl p-6 border-amber-500/30">
+                            <h3 class="font-serif-title text-lg font-bold text-amber-300 mb-2">Brief Overview</h3>
+                            <p>The Panchatantra is an old collection of stories told through animals, and every story carries a real lesson about life. Book 1 focuses on how easily strong friendships can fall apart — not because of big fights, but because of doubt, rumors, and letting outside words get between people. It shows that once trust is broken, it is hard to bring back what was there before. Book 2 tells the story of four very different friends: a crow, a mouse, a turtle, and a deer. They do not look alike or have the same strengths, but they care for each other deeply. When one is in trouble, the others do not run away — they think together, help each other, and find a way to keep everyone safe. Both books together show clearly what real friendship should look like — loyalty, honesty, and staying together through good times and hard times.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif-title text-xl font-bold text-white mb-3">Why This Is My Favorite</h3>
+                            <p>I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I have a group of friends I have known since Senior High School. We were together through exams, projects, and even personal problems. We promised we would finish college together and graduate side by side. But now, in our 4th year, everything changed — all because of our thesis and capstone project.</p>
+                            <p class="mt-3">I poured so much of myself into our work. I built the first version of our system from the beginning. I traveled all the way to Burias to gather the data we needed — that trip was tiring and far from home, but I did it for our group. I finished my tasks early so we would not be rushed, and I even helped my friends with their work so no one would struggle or fall behind. When I got sick from all the pressure and had to go home to rest, I missed some consultations — and that was when everything fell apart. Instead of asking how I was or waiting for me to get better, they removed me from the group completely. They acted like I gave nothing at all, like I never stayed up late, traveled far, or did extra work. It hurt so much — and this story helped me see that what happened is not what real friendship is. That is why this means so much to me.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-serif-title text-xl font-bold text-white mb-4">Lessons That Truly Stuck With Me</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">True friendship does not fade when things get hard</h4>
+                                    <p class="text-xs text-slate-300">The four friends in Book 2 did not leave each other just because danger came. They stayed and helped. I learned that people who truly care for you do not turn their backs the moment you cannot be there or when you are going through something difficult. They check on you. They wait. They understand.</p>
+                                </div>
+                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Your hard work should never be erased</h4>
+                                    <p class="text-xs text-slate-300">Book 1 shows how people can forget everything you have given once they start listening to rumors or believing wrong things. I realized that what I did — building the system, collecting data, helping everyone — was real and valuable. No one can make those things disappear just because they choose to ignore them.</p>
+                                </div>
+                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Friendship works both ways</h4>
+                                    <p class="text-xs text-slate-300">I always gave my best — I helped, I understood, I carried extra work — but I did not get the same in return. I learned that being a friend is not just about what you can do for others. It is also about them caring for you. If people only value you when you are useful, that is not friendship — that is being used.</p>
+                                </div>
+                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Every person’s part matters</h4>
+                                    <p class="text-xs text-slate-300">In Book 2, each animal had a different strength, and all were needed to help one another. My skills and effort were important to our project too. I should not have to beg to be seen or recognized for what I did.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card rounded-2xl p-6 border-purple-500/30">
+                            <h3 class="font-serif-title text-lg font-bold text-purple-300 mb-2">What I Truly Realized</h3>
+                            <p class="italic text-slate-200">"Going through this experience made these stories feel less like lessons in a book and more like something I lived myself. I felt sad, confused, and afraid — afraid I would lose my chance to graduate, afraid my work would be taken credit for, and hurt that people I loved for years could treat me like I never mattered. I gave my time, my energy, and even my health for our group. And still, they chose to push me aside. But as I thought about these stories, I realized something important: I did not fail our friendship. I kept my promises. I gave my best. I was loyal. It was they who forgot what being a friend really means.<br><br>I will still be kind and helpful — that is just who I am. But now I know I deserve the same care I give. I know that real friends will see my effort, believe in me, and stand by me even when things are messy. I may have lost these friends, but I found something more important: I know my worth. I will finish my studies, I will graduate, and I will succeed — not because of them, but because of me. And one day, I will surround myself with people who stay, who value me, and who remember that loyalty is the most precious thing we can share."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Summary of Learning -->
+        <section id="summary" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12">
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div class="text-center mb-6">
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 4 Synthesis</span>
+                        <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Summary of Learning</h2>
+                        <p class="text-slate-400 text-sm mt-1">A continuous essay on literary elements, devices, lenses, and core story insights.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-8 border-amber-500/20 text-slate-300 text-base leading-relaxed space-y-6">
+                        <p>
+                            Throughout the Great Books course, I learned so many important things that helped me understand stories and life in new ways. First, we studied the Elements of Literature. These are the basic parts that make every story complete — characters, setting, plot, conflict, and theme. I learned that characters are the people in the story; setting is where and when it happens; plot is the sequence of events; conflict is the problem the characters face; and theme is the main message or lesson about life. Knowing these elements helped me see how every part of a story connects and why each one is important.
+                        </p>
+                        <p>
+                            Next, we learned about Literary Devices. These are special tools writers use to make their stories meaningful, beautiful, and deep. I learned about symbols — where one thing stands for a bigger idea, like a flower standing for growth or a butterfly standing for change. We also learned about metaphors, comparisons, repetition, and imagery that helps us see and feel what the writer wants to say. These devices showed me that stories do not always explain things directly — sometimes they show us deeper truths through these special ways.
+                        </p>
+                        <p>
+                            Then we studied Literary Lenses. These are like different ways of looking at a story to understand it more deeply. Instead of just reading to know what happens, we can look through a lens to find more meaning. For example, the moral lens helps us see lessons about right and wrong; the social lens shows how people treat each other; and the spiritual lens helps us see messages about faith, hope, and purpose. I learned that one story can have many meanings, and these lenses help me find lessons that I can use in my own life.
+                        </p>
+                        <p>
+                            We also read and analyzed wonderful stories — "Hope for the Flowers" and "Everywhere in a Garden". These stories are simple but very powerful. Hope for the Flowers taught me about growing up, finding your own way, and not giving up even when things are hard. Everywhere in a Garden showed me that every plant has its own time to grow and bloom, just like every person. While reading these, I practiced finding literary elements, identifying devices like symbols, and using lenses to understand the deeper messages.
+                        </p>
+                        <p>
+                            Overall, this course taught me that literature is not just about reading books or finishing schoolwork. It is about understanding people, cultures, and life itself. I developed better thinking skills — I learned to observe carefully, ask questions, connect stories to real life, and explain what I understand clearly. I learned that every story, no matter how simple, has something valuable to teach us.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Personal Reflection -->
+        <section id="reflection" class="scroll-mt-28">
+            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div class="text-center mb-6">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">Section 5 Essay</span>
+                        <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Personal Reflection</h2>
+                        <p class="text-slate-400 text-sm mt-1">Reflective narrative synthesizing personal growth, moral lenses, and future IT ambitions.</p>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-8 border-purple-500/20 text-slate-300 text-base leading-relaxed space-y-6">
+                        <p>
+                            Studying Great Books has been a meaningful journey for me. Before this course, I used to read stories just to finish them or answer assignments. I did not look for deeper meanings or connect them to my own life. But as we went through the lessons, my understanding and appreciation changed completely. I began to see that every story is not just words on a page — it carries real feelings, true experiences, and lessons that still guide us today. I learned that literature shows what people have lived, believed, and hoped for across time, and the truths we find in books can help us understand ourselves and the people around us better.
+                        </p>
+                        <p>
+                            Along the way, I faced some challenges. Some stories did not say things directly, and I had to think carefully to understand the symbols and hidden messages. At first, it was also hard to identify literary devices or know which lens to use when analyzing a work. I overcame these difficulties by reading slowly, taking notes, and connecting what I read to my own life — to my family, my friends, my struggles, and my dreams. When I linked the stories to what I already knew and felt, everything became clearer and easier to understand.
+                        </p>
+                        <p>
+                            Among all the approaches we learned, the moral and life-centered lens influenced me the most. This lens looks at lessons about right and wrong, personal growth, and what truly matters in life. It helped me see that no one is perfect — not the characters in the stories, and not us either. It showed me that making mistakes does not mean we are bad people; it means we are human, and we can always choose to do better. This approach touched me deeply because it does not just judge — it understands, and it gives hope that we can change and grow at any time.
+                        </p>
+                        <p>
+                            Through these lessons and stories, I gained important realizations about life, people, and myself. From Hope for the Flowers and Everywhere in a Garden, I learned that growth takes time and everyone has their own pace. I should not rush myself or compare my journey to others, just as flowers do not all bloom at the same moment. From other stories, I saw that true friendship means staying loyal and fair, even when things get hard. I learned that people are complex — we all have strengths and weaknesses, joys and sorrows — and we should be kind to one another because we do not always know what someone else is going through. I realized that doing the right thing is not always easy, but it is always worth it.
+                        </p>
+                        <p>
+                            I will carry all these lessons with me in every part of my life. Personally, I will value myself more, trust my own path, and surround myself with people who stay true. I will be kind, patient, and honest, even when others are not. In my studies, I will work with purpose, give my best not just for grades but for real learning, and stand up for what is fair. In my future career as an IT professional, I will remember that technology is made for people. I will use my skills to help and respect others, to build things that serve everyone well, and to always treat people with dignity. Great Books taught me that being a good person is just as important as being skilled — and that is the most valuable lesson I will take with me forever.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-amber-500/20 py-8 text-center text-xs text-slate-400">
+        <p>© Great Books Digital Portfolio • Renan S. Alburo • BSIT 4th Year</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
