@@ -74,6 +74,13 @@
             -webkit-text-fill-color: transparent;
         }
 
+        /* Hero Background Overlay */
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(11, 9, 20, 0.75), rgba(11, 9, 20, 0.95)), url('https://images.unsplash.com/photo-1457369804613-52c61a465e75?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+        }
+
         /* Ambient Glowing Background Orbs */
         .bg-ambient {
             position: fixed;
@@ -139,21 +146,24 @@
     <!-- Main Content Container -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 space-y-28">
 
-        <!-- Hero Banner -->
-        <section id="hero" class="text-center py-12 relative">
-            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-amber-500/30 text-amber-300 text-xs tracking-widest uppercase mb-6">
-                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                <span>Culminating Performance Task</span>
+        <!-- Hero Banner with Blended Background Image -->
+        <section id="hero" class="text-center py-20 px-6 rounded-3xl hero-bg border border-amber-500/20 shadow-2xl relative overflow-hidden">
+            <div class="absolute inset-0 backdrop-blur-sm bg-slate-950/40"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-amber-500/30 text-amber-300 text-xs tracking-widest uppercase mb-6">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                    <span>Culminating Performance Task</span>
+                </div>
+                <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg">
+                    My Literary Journey
+                </h1>
+                <p class="font-serif-title text-xl sm:text-2xl gold-gradient-text mt-3 font-semibold">
+                    A Great Books Digital Portfolio
+                </p>
+                <p class="max-w-2xl mx-auto mt-6 text-slate-200 text-base sm:text-lg leading-relaxed font-light drop-shadow">
+                    Bridging the logical precision of Information Technology with the timeless wisdom, human values, and moral insight of world literature.
+                </p>
             </div>
-            <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
-                My Literary Journey
-            </h1>
-            <p class="font-serif-title text-xl sm:text-2xl gold-gradient-text mt-3 font-semibold">
-                A Great Books Digital Portfolio
-            </p>
-            <p class="max-w-2xl mx-auto mt-6 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
-                Bridging the logical precision of Information Technology with the timeless wisdom, human values, and moral insight of world literature.
-            </p>
         </section>
 
         <!-- SECTION 1: Student Profile -->
@@ -365,117 +375,102 @@
             </div>
         </section>
 
-        <!-- SECTION 3: Favorite Literary Masterpiece -->
+        <!-- SECTION 3: Favorite Literary Masterpiece (Interactive Card Showcase) -->
         <section id="favorite" class="scroll-mt-28">
             <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div class="max-w-4xl mx-auto space-y-8">
+                <div class="max-w-5xl mx-auto space-y-8">
                     <div class="text-center">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 3 Showcase</span>
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 3 Interactive Showcase</span>
                         <h2 class="font-serif-title text-3xl md:text-5xl font-bold text-white mt-3">My Favorite Literary Masterpiece</h2>
-                        <p class="font-serif-title text-xl text-amber-400 mt-2">Panchatantra — Book 1 and Book 2</p>
-                        <p class="text-slate-400 text-xs">Attributed to Vishnu Sharma</p>
                     </div>
 
-                    <div class="space-y-6 text-slate-300 text-base leading-relaxed">
-                        <div class="glass-card rounded-2xl p-6 border-amber-500/30">
-                            <h3 class="font-serif-title text-lg font-bold text-amber-300 mb-2">Brief Overview</h3>
-                            <p>The Panchatantra is an old collection of stories told through animals, and every story carries a real lesson about life. Book 1 focuses on how easily strong friendships can fall apart, not because of big fights, but because of doubt, rumors, and letting outside words get between people. It shows that once trust is broken, it is hard to bring back what was there before. Book 2 tells the story of four very different friends: a crow, a mouse, a turtle, and a deer. They do not look alike or have the same strengths, but they care for each other deeply. When one is in trouble, the others do not run away, they think together, help each other, and find a way to keep everyone safe. Both books together show clearly what real friendship should look like, loyalty, honesty, and staying together through good times and hard times.</p>
-                        </div>
+                    <!-- Visual Masterpiece Showcase Card -->
+                    <div onclick="openFavoriteModal()" class="glass-card glass-card-hover rounded-3xl p-6 md:p-8 cursor-pointer group border-amber-500/30 relative overflow-hidden">
+                        <div class="flex flex-col lg:flex-row items-center gap-8">
+                            <div class="w-full lg:w-1/2 h-64 md:h-80 rounded-2xl overflow-hidden border border-amber-500/30 relative shrink-0">
+                                <img src="panchatantra.jpg" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'" alt="Panchatantra Artwork" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                <span class="absolute bottom-4 left-4 px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs">
+                                    Click to Open Complete Personal Story
+                                </span>
+                            </div>
 
-                        <div>
-                            <h3 class="font-serif-title text-xl font-bold text-white mb-3">Why This Is My Favorite</h3>
-                            <p>I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I have a group of friends I have known since Senior High School. We were together through exams, projects, and even personal problems. We promised we would finish college together and graduate side by side. But now, in our 4th year, everything changed — all because of our thesis and capstone project.</p>
-                            <p class="mt-3">I poured so much of myself into our work. I built the first version of our system from the beginning. I traveled all the way to Burias to gather the data we needed — that trip was tiring and far from home, but I did it for our group. I finished my tasks early so we would not be rushed, and I even helped my friends with their work so no one would struggle or fall behind. When I got sick from all the pressure and had to go home to rest, I missed some consultations — and that was when everything fell apart. Instead of asking how I was or waiting for me to get better, they removed me from the group completely. They acted like I gave nothing at all, like I never stayed up late, traveled far, or did extra work. It hurt so much — and this story helped me see that what happened is not what real friendship is. That is why this means so much to me.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="font-serif-title text-xl font-bold text-white mb-4">Lessons That Truly Stuck With Me</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
-                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">True friendship does not fade when things get hard</h4>
-                                    <p class="text-xs text-slate-300">The four friends in Book 2 did not leave each other just because danger came. They stayed and helped. I learned that people who truly care for you do not turn their backs the moment you cannot be there or when you are going through something difficult. They check on you. They wait. They understand.</p>
-                                </div>
-                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
-                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Your hard work should never be erased</h4>
-                                    <p class="text-xs text-slate-300">Book 1 shows how people can forget everything you have given once they start listening to rumors or believing wrong things. I realized that what I did — building the system, collecting data, helping everyone — was real and valuable. No one can make those things disappear just because they choose to ignore them.</p>
-                                </div>
-                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
-                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Friendship works both ways</h4>
-                                    <p class="text-xs text-slate-300">I always gave my best — I helped, I understood, I carried extra work — but I did not get the same in return. I learned that being a friend is not just about what you can do for others. It is also about them caring for you. If people only value you when you are useful, that is not friendship — that is being used.</p>
-                                </div>
-                                <div class="glass-card rounded-xl p-5 border-amber-500/20">
-                                    <h4 class="font-semibold text-amber-300 text-sm mb-1">Every person’s part matters</h4>
-                                    <p class="text-xs text-slate-300">In Book 2, each animal had a different strength, and all were needed to help one another. My skills and effort were important to our project too. I should not have to beg to be seen or recognized for what I did.</p>
+                            <div class="space-y-4 text-slate-300">
+                                <span class="px-3 py-1 rounded-md bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold">Vishnu Sharma</span>
+                                <h3 class="font-serif-title text-2xl md:text-3xl font-bold text-white group-hover:text-amber-400 transition">Panchatantra — Book 1 and Book 2</h3>
+                                <p class="text-sm leading-relaxed text-slate-300 line-clamp-3">
+                                    I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I spent months pouring my effort into our capstone project, traveling all the way to Burias for data collection...
+                                </p>
+                                <div class="inline-flex items-center space-x-2 text-amber-400 font-semibold text-sm pt-2">
+                                    <span>Read Full Narrative & 4 Core Lessons</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition"></i>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="glass-card rounded-2xl p-6 border-purple-500/30">
-                            <h3 class="font-serif-title text-lg font-bold text-purple-300 mb-2">What I Truly Realized</h3>
-                            <p class="italic text-slate-200">"Going through this experience made these stories feel less like lessons in a book and more like something I lived myself. I felt sad, confused, and afraid — afraid I would lose my chance to graduate, afraid my work would be taken credit for, and hurt that people I loved for years could treat me like I never mattered. I gave my time, my energy, and even my health for our group. And still, they chose to push me aside. But as I thought about these stories, I realized something important: I did not fail our friendship. I kept my promises. I gave my best. I was loyal. It was they who forgot what being a friend really means.<br><br>I will still be kind and helpful — that is just who I am. But now I know I deserve the same care I give. I know that real friends will see my effort, believe in me, and stand by me even when things are messy. I may have lost these friends, but I found something more important: I know my worth. I will finish my studies, I will graduate, and I will succeed — not because of them, but because of me. And one day, I will surround myself with people who stay, who value me, and who remember that loyalty is the most precious thing we can share."</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4: Summary of Learning -->
+        <!-- SECTION 4: Summary of Learning (Interactive Dashboard) -->
         <section id="summary" class="scroll-mt-28">
             <div class="glass-card rounded-3xl p-8 md:p-12">
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <div class="text-center mb-6">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 4 Synthesis</span>
+                <div class="max-w-5xl mx-auto space-y-8">
+                    <div class="text-center">
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 4 Learning Dashboard</span>
                         <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Summary of Learning</h2>
-                        <p class="text-slate-400 text-sm mt-1">A continuous essay on literary elements, devices, lenses, and core story insights.</p>
+                        <p class="text-slate-400 text-sm mt-1">Select any category tab below to explore my detailed takeaways from the Great Books curriculum.</p>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-8 border-amber-500/20 text-slate-300 text-base leading-relaxed space-y-6">
-                        <p>
-                            Throughout the Great Books course, I learned so many important things that helped me understand stories and life in new ways. First, we studied the Elements of Literature. These are the basic parts that make every story complete — characters, setting, plot, conflict, and theme. I learned that characters are the people in the story; setting is where and when it happens; plot is the sequence of events; conflict is the problem the characters face; and theme is the main message or lesson about life. Knowing these elements helped me see how every part of a story connects and why each one is important.
-                        </p>
-                        <p>
-                            Next, we learned about Literary Devices. These are special tools writers use to make their stories meaningful, beautiful, and deep. I learned about symbols — where one thing stands for a bigger idea, like a flower standing for growth or a butterfly standing for change. We also learned about metaphors, comparisons, repetition, and imagery that helps us see and feel what the writer wants to say. These devices showed me that stories do not always explain things directly — sometimes they show us deeper truths through these special ways.
-                        </p>
-                        <p>
-                            Then we studied Literary Lenses. These are like different ways of looking at a story to understand it more deeply. Instead of just reading to know what happens, we can look through a lens to find more meaning. For example, the moral lens helps us see lessons about right and wrong; the social lens shows how people treat each other; and the spiritual lens helps us see messages about faith, hope, and purpose. I learned that one story can have many meanings, and these lenses help me find lessons that I can use in my own life.
-                        </p>
-                        <p>
-                            We also read and analyzed wonderful stories — "Hope for the Flowers" and "Everywhere in a Garden". These stories are simple but very powerful. Hope for the Flowers taught me about growing up, finding your own way, and not giving up even when things are hard. Everywhere in a Garden showed me that every plant has its own time to grow and bloom, just like every person. While reading these, I practiced finding literary elements, identifying devices like symbols, and using lenses to understand the deeper messages.
-                        </p>
-                        <p>
-                            Overall, this course taught me that literature is not just about reading books or finishing schoolwork. It is about understanding people, cultures, and life itself. I developed better thinking skills — I learned to observe carefully, ask questions, connect stories to real life, and explain what I understand clearly. I learned that every story, no matter how simple, has something valuable to teach us.
-                        </p>
+                    <!-- Interactive Learning Category Tabs -->
+                    <div class="flex flex-wrap justify-center gap-2 border-b border-white/10 pb-4" id="learningTabs">
+                        <button onclick="switchTab(0)" class="tab-btn active px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition">1. Elements of Literature</button>
+                        <button onclick="switchTab(1)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">2. Literary Devices</button>
+                        <button onclick="switchTab(2)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">3. Critical Lenses</button>
+                        <button onclick="switchTab(3)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">4. Short Masterpieces</button>
+                        <button onclick="switchTab(4)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">5. Overall Synthesis</button>
+                    </div>
+
+                    <!-- Learning Content Display Container -->
+                    <div id="tabContent" class="glass-card rounded-2xl p-6 sm:p-8 border-amber-500/20 text-slate-300 text-base leading-relaxed">
+                        <!-- Content inserted dynamically via JS -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: Personal Reflection -->
+        <!-- SECTION 5: Personal Reflection (Interactive Journey Stepper) -->
         <section id="reflection" class="scroll-mt-28">
             <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <div class="text-center mb-6">
-                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">Section 5 Essay</span>
+                <div class="max-w-5xl mx-auto space-y-8">
+                    <div class="text-center">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">Section 5 Reflection Journey</span>
                         <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Personal Reflection</h2>
-                        <p class="text-slate-400 text-sm mt-1">Reflective narrative synthesizing personal growth, moral lenses, and future IT ambitions.</p>
+                        <p class="text-slate-400 text-sm mt-1">Click through the 5 reflection milestones to view my personal growth narrative.</p>
                     </div>
 
-                    <div class="glass-card rounded-2xl p-8 border-purple-500/20 text-slate-300 text-base leading-relaxed space-y-6">
-                        <p>
-                            Studying Great Books has been a meaningful journey for me. Before this course, I used to read stories just to finish them or answer assignments. I did not look for deeper meanings or connect them to my own life. But as we went through the lessons, my understanding and appreciation changed completely. I began to see that every story is not just words on a page — it carries real feelings, true experiences, and lessons that still guide us today. I learned that literature shows what people have lived, believed, and hoped for across time, and the truths we find in books can help us understand ourselves and the people around us better.
-                        </p>
-                        <p>
-                            Along the way, I faced some challenges. Some stories did not say things directly, and I had to think carefully to understand the symbols and hidden messages. At first, it was also hard to identify literary devices or know which lens to use when analyzing a work. I overcame these difficulties by reading slowly, taking notes, and connecting what I read to my own life — to my family, my friends, my struggles, and my dreams. When I linked the stories to what I already knew and felt, everything became clearer and easier to understand.
-                        </p>
-                        <p>
-                            Among all the approaches we learned, the moral and life-centered lens influenced me the most. This lens looks at lessons about right and wrong, personal growth, and what truly matters in life. It helped me see that no one is perfect — not the characters in the stories, and not us either. It showed me that making mistakes does not mean we are bad people; it means we are human, and we can always choose to do better. This approach touched me deeply because it does not just judge — it understands, and it gives hope that we can change and grow at any time.
-                        </p>
-                        <p>
-                            Through these lessons and stories, I gained important realizations about life, people, and myself. From Hope for the Flowers and Everywhere in a Garden, I learned that growth takes time and everyone has their own pace. I should not rush myself or compare my journey to others, just as flowers do not all bloom at the same moment. From other stories, I saw that true friendship means staying loyal and fair, even when things get hard. I learned that people are complex — we all have strengths and weaknesses, joys and sorrows — and we should be kind to one another because we do not always know what someone else is going through. I realized that doing the right thing is not always easy, but it is always worth it.
-                        </p>
-                        <p>
-                            I will carry all these lessons with me in every part of my life. Personally, I will value myself more, trust my own path, and surround myself with people who stay true. I will be kind, patient, and honest, even when others are not. In my studies, I will work with purpose, give my best not just for grades but for real learning, and stand up for what is fair. In my future career as an IT professional, I will remember that technology is made for people. I will use my skills to help and respect others, to build things that serve everyone well, and to always treat people with dignity. Great Books taught me that being a good person is just as important as being skilled — and that is the most valuable lesson I will take with me forever.
-                        </p>
+                    <!-- Stepper Grid Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                        <button onclick="selectReflectionStep(0)" class="refl-step active p-3 rounded-xl bg-purple-600 text-white font-semibold text-xs text-center transition border border-purple-400/40">
+                            Step 1: Reader Growth
+                        </button>
+                        <button onclick="selectReflectionStep(1)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
+                            Step 2: Challenges
+                        </button>
+                        <button onclick="selectReflectionStep(2)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
+                            Step 3: Moral Lens
+                        </button>
+                        <button onclick="selectReflectionStep(3)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
+                            Step 4: Life Truths
+                        </button>
+                        <button onclick="selectReflectionStep(4)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
+                            Step 5: IT Career Vision
+                        </button>
+                    </div>
+
+                    <!-- Reflection Display Card -->
+                    <div id="reflectionDisplay" class="glass-card rounded-2xl p-6 sm:p-8 border-purple-500/30 text-slate-300 text-base leading-relaxed">
+                        <!-- Content inserted dynamically via JS -->
                     </div>
                 </div>
             </div>
@@ -488,15 +483,70 @@
         <p>© Great Books Digital Portfolio • Renan S. Alburo • BSIT 4th Year</p>
     </footer>
 
-    <!-- INTERACTIVE MODAL DRAWER FOR SECTION 2 -->
+    <!-- MODAL 1: FAVORITE MASTERPIECE MODAL (SECTION 3) -->
+    <div id="favoriteModal" onclick="handleFavBackdrop(event)" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="glass-card border border-amber-500/40 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl my-8">
+            <button onclick="closeFavoriteModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-rose-600 transition flex items-center justify-center">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="text-center space-y-2 pr-6">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold uppercase tracking-wider">
+                    Favorite Masterpiece Deep Dive
+                </span>
+                <h3 class="font-serif-title text-2xl sm:text-4xl font-bold text-white">Panchatantra — Book 1 and Book 2</h3>
+                <p class="text-xs text-amber-400 font-medium">Attributed to Vishnu Sharma</p>
+            </div>
+
+            <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4">
+                <div class="glass-card rounded-2xl p-6 border-amber-500/30 bg-white/5">
+                    <h4 class="font-serif-title text-lg font-bold text-amber-300 mb-2">Brief Overview</h4>
+                    <p>The Panchatantra is an old collection of stories told through animals, and every story carries a real lesson about life. Book 1 focuses on how easily strong friendships can fall apart — not because of big fights, but because of doubt, rumors, and letting outside words get between people. It shows that once trust is broken, it is hard to bring back what was there before. Book 2 tells the story of four very different friends: a crow, a mouse, a turtle, and a deer. They do not look alike or have the same strengths, but they care for each other deeply. When one is in trouble, the others do not run away — they think together, help each other, and find a way to keep everyone safe. Both books together show clearly what real friendship should look like — loyalty, honesty, and staying together through good times and hard times.</p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-serif-title text-xl font-bold text-white">Why This Is My Favorite</h4>
+                    <p>I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I have a group of friends I have known since Senior High School. We were together through exams, projects, and even personal problems. We promised we would finish college together and graduate side by side. But now, in our 4th year, everything changed — all because of our thesis and capstone project.</p>
+                    <p>I poured so much of myself into our work. I built the first version of our system from the beginning. I traveled all the way to Burias to gather the data we needed — that trip was tiring and far from home, but I did it for our group. I finished my tasks early so we would not be rushed, and I even helped my friends with their work so no one would struggle or fall behind. When I got sick from all the pressure and had to go home to rest, I missed some consultations — and that was when everything fell apart. Instead of asking how I was or waiting for me to get better, they removed me from the group completely. They acted like I gave nothing at all, like I never stayed up late, traveled far, or did extra work. It hurt so much — and this story helped me see that what happened is not what real friendship is. That is why this means so much to me.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-serif-title text-xl font-bold text-white mb-4">Lessons That Truly Stuck With Me</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
+                            <h5 class="font-semibold text-amber-300 text-sm mb-1">True friendship does not fade when things get hard</h5>
+                            <p class="text-xs text-slate-300">The four friends in Book 2 did not leave each other just because danger came. They stayed and helped. I learned that people who truly care for you do not turn their backs the moment you cannot be there or when you are going through something difficult. They check on you. They wait. They understand.</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
+                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Your hard work should never be erased</h5>
+                            <p class="text-xs text-slate-300">Book 1 shows how people can forget everything you have given once they start listening to rumors or believing wrong things. I realized that what I did — building the system, collecting data, helping everyone — was real and valuable. No one can make those things disappear just because they choose to ignore them.</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
+                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Friendship works both ways</h5>
+                            <p class="text-xs text-slate-300">I always gave my best — I helped, I understood, I carried extra work — but I did not get the same in return. I learned that being a friend is not just about what you can do for others. It is also about them caring for you. If people only value you when you are useful, that is not friendship — that is being used.</p>
+                        </div>
+                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
+                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Every person’s part matters</h5>
+                            <p class="text-xs text-slate-300">In Book 2, each animal had a different strength, and all were needed to help one another. My skills and effort were important to our project too. I should not have to beg to be seen or recognized for what I did.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl p-6 border-purple-500/30 bg-purple-950/20">
+                    <h4 class="font-serif-title text-lg font-bold text-purple-300 mb-2">What I Truly Realized</h4>
+                    <p class="italic text-slate-200">"Going through this experience made these stories feel less like lessons in a book and more like something I lived myself. I felt sad, confused, and afraid — afraid I would lose my chance to graduate, afraid my work would be taken credit for, and hurt that people I loved for years could treat me like I never mattered. I gave my time, my energy, and even my health for our group. And still, they chose to push me aside. But as I thought about these stories, I realized something important: I did not fail our friendship. I kept my promises. I gave my best. I was loyal. It was they who forgot what being a friend really means.<br><br>I will still be kind and helpful — that is just who I am. But now I know I deserve the same care I give. I know that real friends will see my effort, believe in me, and stand by me even when things are messy. I may have lost these friends, but I found something more important: I know my worth. I will finish my studies, I will graduate, and I will succeed — not because of them, but because of me. And one day, I will surround myself with people who stay, who value me, and who remember that loyalty is the most precious thing we can share."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: SECTION 2 LITERARY ANALYSES MODAL -->
     <div id="storyModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
         <div class="glass-card border border-amber-500/30 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl my-8">
-            <!-- Close Button -->
             <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-rose-600 transition flex items-center justify-center">
                 <i data-lucide="x" class="w-5 h-5"></i>
             </button>
 
-            <!-- Modal Header -->
             <div class="space-y-2 pr-8">
                 <span id="modalLens" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold tracking-wide">
                     Lens Name
@@ -507,16 +557,12 @@
                 <p id="modalAuthor" class="text-xs text-amber-400/90 font-medium">by Author Name</p>
             </div>
 
-            <!-- Modal Image -->
             <div class="rounded-2xl overflow-hidden h-48 sm:h-64 border border-white/10 relative">
                 <img id="modalImage" src="" alt="Masterpiece Artwork" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
             </div>
 
-            <!-- Content Sections -->
             <div class="space-y-6 text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
-                
-                <!-- Story Overview / Script -->
                 <div>
                     <h4 class="font-serif-title text-base font-bold text-amber-300 mb-2 flex items-center">
                         <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Story Overview & Plot Script
@@ -526,7 +572,6 @@
                     </p>
                 </div>
 
-                <!-- Complete Literary Analysis -->
                 <div>
                     <h4 class="font-serif-title text-base font-bold text-purple-300 mb-2 flex items-center">
                         <i data-lucide="brain" class="w-4 h-4 mr-2"></i> Literary Analysis & Applied Lens
@@ -536,29 +581,116 @@
                     </p>
                 </div>
 
-                <!-- Key Learnings -->
                 <div>
                     <h4 class="font-serif-title text-base font-bold text-amber-400 mb-2 flex items-center">
                         <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i> Key Learnings & Takeaways
                     </h4>
                     <ul id="modalLearningsList" class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-300 bg-white/5 p-4 rounded-xl border border-white/5">
-                        <!-- Bullet points dynamically added -->
                     </ul>
                 </div>
-
-            </div>
-
-            <!-- Modal Footer -->
-            <div class="pt-4 border-t border-white/10 flex justify-end">
-                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition text-xs">
-                    Close Modal
-                </button>
             </div>
         </div>
     </div>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+        const learningData = [
+            {
+                title: "1. Elements of Literature",
+                content: "Throughout the Great Books course, I learned so many important things that helped me understand stories and life in new ways. First, we studied the Elements of Literature. These are the basic parts that make every story complete — characters, setting, plot, conflict, and theme. I learned that characters are the people in the story; setting is where and when it happens; plot is the sequence of events; conflict is the problem the characters face; and theme is the main message or lesson about life. Knowing these elements helped me see how every part of a story connects and why each one is important."
+            },
+            {
+                title: "2. Literary Devices",
+                content: "Next, we learned about Literary Devices. These are special tools writers use to make their stories meaningful, beautiful, and deep. I learned about symbols — where one thing stands for a bigger idea, like a flower standing for growth or a butterfly standing for change. We also learned about metaphors, comparisons, repetition, and imagery that helps us see and feel what the writer wants to say. These devices showed me that stories do not always explain things directly — sometimes they show us deeper truths through these special ways."
+            },
+            {
+                title: "3. Literary Lenses",
+                content: "Then we studied Literary Lenses. These are like different ways of looking at a story to understand it more deeply. Instead of just reading to know what happens, we can look through a lens to find more meaning. For example, the moral lens helps us see lessons about right and wrong; the social lens shows how people treat each other; and the spiritual lens helps us see messages about faith, hope, and purpose. I learned that one story can have many meanings, and these lenses help me find lessons that I can use in my own life."
+            },
+            {
+                title: "4. Analysis of Short Literary Masterpieces",
+                content: "We also read and analyzed wonderful stories — \"Hope for the Flowers\" and \"Everywhere in a Garden\". These stories are simple but very powerful. Hope for the Flowers taught me about growing up, finding your own way, and not giving up even when things are hard. Everywhere in a Garden showed me that every plant has its own time to grow and bloom, just like every person. While reading these, I practiced finding literary elements, identifying devices like symbols, and using lenses to understand the deeper messages."
+            },
+            {
+                title: "5. Overall Course Synthesis",
+                content: "Overall, this course taught me that literature is not just about reading books or finishing schoolwork. It is about understanding people, cultures, and life itself. I developed better thinking skills — I learned to observe carefully, ask questions, connect stories to real life, and explain what I understand clearly. I learned that every story, no matter how simple, has something valuable to teach us."
+            }
+        ];
+
+        const reflectionData = [
+            {
+                title: "Growth as a Reader",
+                text: "Studying Great Books has been a meaningful journey for me. Before this course, I used to read stories just to finish them or answer assignments. I did not look for deeper meanings or connect them to my own life. But as we went through the lessons, my understanding and appreciation changed completely. I began to see that every story is not just words on a page — it carries real feelings, true experiences, and lessons that still guide us today. I learned that literature shows what people have lived, believed, and hoped for across time, and the truths we find in books can help us understand ourselves and the people around us better."
+            },
+            {
+                title: "Overcoming Reading Challenges",
+                text: "Along the way, I faced some challenges. Some stories did not say things directly, and I had to think carefully to understand the symbols and hidden messages. At first, it was also hard to identify literary devices or know which lens to use when analyzing a work. I overcame these difficulties by reading slowly, taking notes, and connecting what I read to my own life — to my family, my friends, my struggles, and my dreams. When I linked the stories to what I already knew and felt, everything became clearer and easier to understand."
+            },
+            {
+                title: "Most Influential Lens",
+                text: "Among all the approaches we learned, the moral and life-centered lens influenced me the most. This lens looks at lessons about right and wrong, personal growth, and what truly matters in life. It helped me see that no one is perfect — not the characters in the stories, and not us either. It showed me that making mistakes does not mean we are bad people; it means we are human, and we can always choose to do better. This approach touched me deeply because it does not just judge — it understands, and it gives hope that we can change and grow at any time."
+            },
+            {
+                title: "Realizations About Life and Human Nature",
+                text: "Through these lessons and stories, I gained important realizations about life, people, and myself. From Hope for the Flowers and Everywhere in a Garden, I learned that growth takes time and everyone has their own pace. I should not rush myself or compare my journey to others, just as flowers do not all bloom at the same moment. From other stories, I saw that true friendship means staying loyal and fair, even when things get hard. I learned that people are complex — we all have strengths and weaknesses, joys and sorrows — and we should be kind to one another because we do not always know what someone else is going through. I realized that doing the right thing is not always easy, but it is always worth it."
+            },
+            {
+                title: "Application in Personal Life & IT Career",
+                text: "I will carry all these lessons with me in every part of my life. Personally, I will value myself more, trust my own path, and surround myself with people who stay true. I will be kind, patient, and honest, even when others are not. In my studies, I will work with purpose, give my best not just for grades but for real learning, and stand up for what is fair. In my future career as an IT professional, I will remember that technology is made for people. I will use my skills to help and respect others, to build things that serve everyone well, and to always treat people with dignity. Great Books taught me that being a good person is just as important as being skilled — and that is the most valuable lesson I will take with me forever."
+            }
+        ];
+
+        function switchTab(index) {
+            const buttons = document.querySelectorAll('#learningTabs .tab-btn');
+            buttons.forEach((btn, i) => {
+                if (i === index) {
+                    btn.className = "tab-btn active px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition";
+                } else {
+                    btn.className = "tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition";
+                }
+            });
+
+            const contentDiv = document.getElementById('tabContent');
+            contentDiv.innerHTML = `
+                <h3 class="font-serif-title text-xl font-bold text-amber-300 mb-3">${learningData[index].title}</h3>
+                <p class="leading-relaxed text-slate-200 text-sm sm:text-base">${learningData[index].content}</p>
+            `;
+        }
+
+        function selectReflectionStep(index) {
+            const steps = document.querySelectorAll('.refl-step');
+            steps.forEach((step, i) => {
+                if (i === index) {
+                    step.className = "refl-step active p-3 rounded-xl bg-purple-600 text-white font-semibold text-xs text-center transition border border-purple-400/40";
+                } else {
+                    step.className = "refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10";
+                }
+            });
+
+            const displayDiv = document.getElementById('reflectionDisplay');
+            displayDiv.innerHTML = `
+                <h3 class="font-serif-title text-xl font-bold text-purple-300 mb-3">${reflectionData[index].title}</h3>
+                <p class="leading-relaxed text-slate-200 text-sm sm:text-base">${reflectionData[index].text}</p>
+            `;
+        }
+
+        function openFavoriteModal() {
+            document.getElementById('favoriteModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeFavoriteModal() {
+            document.getElementById('favoriteModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleFavBackdrop(event) {
+            if (event.target.id === 'favoriteModal') {
+                closeFavoriteModal();
+            }
+        }
+
         const storiesData = {
             1: {
                 title: "The Voice Out of the Whirlwind",
@@ -704,10 +836,13 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeModal();
+                closeFavoriteModal();
             }
         });
 
         window.onload = function() {
+            switchTab(0);
+            selectReflectionStep(0);
             lucide.createIcons();
         };
     </script>
