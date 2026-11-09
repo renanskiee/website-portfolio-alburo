@@ -4,45 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renan S. Alburo | Great Books Digital Portfolio</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        amberGold: '#F59E0B',
+                        royalPurple: '#4C1D95',
+                        deepBurgundy: '#881337',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0914;
             color: #e2e8f0;
         }
+
         .font-serif-title {
             font-family: 'Cinzel', serif;
         }
+
+        /* Glassmorphism Classes */
         .glass-card {
             background: rgba(22, 18, 38, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 215, 0, 0.12);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
         }
+
         .glass-card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .glass-card-hover:hover {
-            transform: translateY(-5px);
-            background: rgba(30, 24, 52, 0.8);
-            border-color: rgba(234, 179, 8, 0.4);
-            box-shadow: 0 12px 40px 0 rgba(234, 179, 8, 0.15);
+            transform: translateY(-6px);
+            background: rgba(32, 25, 56, 0.85);
+            border-color: rgba(245, 158, 11, 0.45);
+            box-shadow: 0 14px 40px 0 rgba(245, 158, 11, 0.18);
         }
+
         .glass-nav {
-            background: rgba(11, 9, 20, 0.85);
+            background: rgba(11, 9, 20, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
         }
+
         .gold-gradient-text {
             background: linear-gradient(135deg, #FFF5C0 0%, #EAB308 50%, #CA8A04 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
+        /* Ambient Glowing Background Orbs */
         .bg-ambient {
             position: fixed;
             top: 0;
@@ -53,15 +85,31 @@
             overflow: hidden;
             pointer-events: none;
         }
+
         .ambient-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(120px);
+            filter: blur(130px);
             opacity: 0.25;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0914;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4c1d95;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
         }
     </style>
 </head>
-<body class="relative min-h-screen selection:bg-yellow-500/30 selection:text-yellow-200">
+<body class="relative min-h-screen selection:bg-amber-500/30 selection:text-amber-200">
 
     <!-- Ambient Glow Background -->
     <div class="bg-ambient">
@@ -71,7 +119,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-50 glass-nav px-6 py-4 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full z-40 glass-nav px-6 py-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#hero" class="flex items-center space-x-3 group">
                 <i data-lucide="book-open" class="w-7 h-7 text-amber-400 transition-transform group-hover:rotate-6"></i>
@@ -115,7 +163,7 @@
                     <div class="relative shrink-0">
                         <!-- Round Profile Image Frame -->
                         <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/60 shadow-2xl relative z-10">
-                            <img src="profile1.jpg" alt="Renan S. Alburo" class="w-full h-full object-cover">
+                            <img src="profile1.jpg" onerror="this.src='https://placehold.co/400x400/201838/F59E0B?text=Renan+S.+Alburo'" alt="Renan S. Alburo" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-purple-600 rounded-full blur-xl opacity-50 z-0"></div>
                     </div>
@@ -155,113 +203,162 @@
         <section id="analyses" class="scroll-mt-28">
             <div class="text-center mb-12">
                 <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white">Compilation of Seven Literary Analyses</h2>
-                <p class="text-slate-400 mt-2 text-sm md:text-base">Explorations of timeless masterpieces analyzed through distinct critical lenses.</p>
+                <p class="text-slate-400 mt-2 text-sm md:text-base">Click on any story card below to open the complete script overview, applied lens analysis, and key takeaways.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- 1. Book of Job -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(1)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="job.jpg" alt="Whirlwind" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="job.jpg" onerror="this.src='https://images.unsplash.com/photo-1509021436468-d51039747127?auto=format&fit=crop&q=80&w=600'" alt="Whirlwind" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Moral Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">The Voice Out of the Whirlwind</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">The Voice Out of the Whirlwind</h3>
                         <p class="text-xs text-amber-400/80 mb-3">From the Book of Job (Biblical text)</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems, but this story teaches me that no matter how skilled I become, I cannot understand everything, especially the deeper mysteries of life, suffering, and purpose. Job’s experience shows that true faith and humility mean trusting God and accepting our limitations, knowing that not every question has an immediate technical answer.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 2. Panchatantra -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(2)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="panchatantra.jpg" alt="Forest Friends" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="panchatantra.jpg" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600'" alt="Forest Friends" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Moral / Didactic Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Panchatantra — Books 1 & 2</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Panchatantra — Books 1 & 2</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Vishnu Sharma</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow, its a reminder that misinformation harms not just individuals but whole groups. Book 2 shows the opposite: four very different animals working together to survive, proving that true strength comes from unity, loyalty, and standing by each other. This teaches me that in both life and tech projects, open communication and trust are key to success.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 3. Ramayana -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(3)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="ramayana.jpg" alt="Ramayana" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="ramayana.jpg" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600'" alt="Ramayana" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Cultural Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Ramayana</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Ramayana</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Valmiki</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain, even when the path is difficult. His dedication to duty inspires me to carry out my responsibilities with honesty, whether in my personal life, academic work, or future career in IT. It reminds me that short cuts and easy choices can never replace character and moral principle.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 4. Mahabharata -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(4)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="mahabharata.jpg" alt="Chariot Battlefield" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="mahabharata.jpg" onerror="this.src='https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=600'" alt="Chariot Battlefield" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Humanist Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Mahabharata</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Mahabharata</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Vyasa</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes. The story teaches that loyalty to family is important, but loyalty to what is just matters more. Through the concept of Karma, it reminds me that every action has consequences. As a future tech developer, this inspires me to think carefully about the impact of what I create, ensuring my work always serves the truth and fair principles.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 5. The Odyssey -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(5)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="odyssey.jpg" alt="Seafaring Voyage" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="odyssey.jpg" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=600'" alt="Seafaring Voyage" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Archetypal Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">The Odyssey</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">The Odyssey</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Homer</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays, yet he keeps moving forward because he holds fast to what he loves. His story reminds me that success requires patience, resilience, and self-control. When I encounter failures or setbacks in my studies or personal projects, I am encouraged to stay focused on my ultimate goal and never give up.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 6. Les Misérables -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between">
+                <div onclick="openModal(6)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="lesmiserables.jpg" alt="Candlesticks Light" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="lesmiserables.jpg" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600'" alt="Candlesticks Light" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Social / Moral Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Les Misérables</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Les Misérables</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Victor Hugo</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made or how society labels us, we can always choose to become better. It challenges me to see people with compassion rather than strict judgment, reminding me that true progress; whether personal, societal, or technological, should aim to lift others up and show understanding.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 7. Psalm 91 -->
-                <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between md:col-span-2 lg:col-span-1">
+                <div onclick="openModal(7)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group md:col-span-2 lg:col-span-1">
                     <div>
-                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20">
-                            <img src="psalm91.jpg" alt="Light in Darkness" class="w-full h-full object-cover">
+                        <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
+                            <img src="psalm91.jpg" onerror="this.src='https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&q=80&w=600'" alt="Light in Darkness" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
+                                Click to Read
+                            </span>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Spiritual Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3">Psalm 91</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Psalm 91</h3>
                         <p class="text-xs text-amber-400/80 mb-3">From the Holy Scriptures</p>
-                        <p class="text-slate-300 text-sm leading-relaxed">
-                            Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come, but that we will face them with confidence, knowing God is our refuge. As a student carrying the weights of academic stress and personal challenges, this Psalm reassures me that peace comes from trusting in divine protection and staying rooted in hope.
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come...
                         </p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
+                        <span>View Full Story & Analysis</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
@@ -391,8 +488,228 @@
         <p>© Great Books Digital Portfolio • Renan S. Alburo • BSIT 4th Year</p>
     </footer>
 
+    <!-- INTERACTIVE MODAL DRAWER FOR SECTION 2 -->
+    <div id="storyModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div class="glass-card border border-amber-500/30 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl my-8">
+            <!-- Close Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-rose-600 transition flex items-center justify-center">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <!-- Modal Header -->
+            <div class="space-y-2 pr-8">
+                <span id="modalLens" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold tracking-wide">
+                    Lens Name
+                </span>
+                <h3 id="modalTitle" class="font-serif-title text-2xl sm:text-3xl font-bold text-white mt-2">
+                    Masterpiece Title
+                </h3>
+                <p id="modalAuthor" class="text-xs text-amber-400/90 font-medium">by Author Name</p>
+            </div>
+
+            <!-- Modal Image -->
+            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 border border-white/10 relative">
+                <img id="modalImage" src="" alt="Masterpiece Artwork" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="space-y-6 text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
+                
+                <!-- Story Overview / Script -->
+                <div>
+                    <h4 class="font-serif-title text-base font-bold text-amber-300 mb-2 flex items-center">
+                        <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Story Overview & Plot Script
+                    </h4>
+                    <p id="modalStoryOverview" class="text-slate-300 leading-relaxed text-xs sm:text-sm bg-white/5 p-4 rounded-xl border border-white/5">
+                        Overview text...
+                    </p>
+                </div>
+
+                <!-- Complete Literary Analysis -->
+                <div>
+                    <h4 class="font-serif-title text-base font-bold text-purple-300 mb-2 flex items-center">
+                        <i data-lucide="brain" class="w-4 h-4 mr-2"></i> Literary Analysis & Applied Lens
+                    </h4>
+                    <p id="modalAnalysisText" class="text-slate-300 leading-relaxed text-xs sm:text-sm bg-white/5 p-4 rounded-xl border border-white/5">
+                        Analysis text...
+                    </p>
+                </div>
+
+                <!-- Key Learnings -->
+                <div>
+                    <h4 class="font-serif-title text-base font-bold text-amber-400 mb-2 flex items-center">
+                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i> Key Learnings & Takeaways
+                    </h4>
+                    <ul id="modalLearningsList" class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-300 bg-white/5 p-4 rounded-xl border border-white/5">
+                        <!-- Bullet points dynamically added -->
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="pt-4 border-t border-white/10 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold hover:bg-amber-400 transition text-xs">
+                    Close Modal
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        lucide.createIcons();
+        const storiesData = {
+            1: {
+                title: "The Voice Out of the Whirlwind",
+                author: "From the Book of Job (Biblical text)",
+                lens: "Religious / Moral Criticism",
+                image: "job.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1509021436468-d51039747127?auto=format&fit=crop&q=80&w=600",
+                overview: "The Book of Job tells the narrative of Job, a righteous man who suffers catastrophic losses of family, health, and wealth without having committed any wickedness. Throughout his trials, Job questions why he must suffer while his friends insist he must have sinned. Finally, God answers Job directly out of a powerful whirlwind, speaking not with direct answers about suffering, but by revealing the immense majesty, order, and complexity of creation that humans can barely comprehend.",
+                analysis: "The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems, but this story teaches me that no matter how skilled I become, I cannot understand everything, especially the deeper mysteries of life, suffering, and purpose. Job’s experience shows that true faith and humility mean trusting God and accepting our limitations, knowing that not every question has an immediate technical answer.",
+                learnings: [
+                    "Human wisdom and technical knowledge have inherent limits.",
+                    "True faith requires humility and trust in divine providence during unexplained trials.",
+                    "Skill and intellect should be paired with awe and respect for the greater mysteries of existence."
+                ]
+            },
+            2: {
+                title: "Panchatantra — Books 1 & 2",
+                author: "Attributed to Vishnu Sharma",
+                lens: "Moral / Didactic Criticism",
+                image: "panchatantra.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600",
+                overview: "The Panchatantra is an ancient Indian collection of interrelated animal fables designed to instruct young princes in wise conduct and statecraft. Book 1 ('The Loss of Friends') details how a cunning jackal named Damanaka uses rumors, deception, and jealousy to destroy the profound friendship between a lion king and a bull. Book 2 ('The Winning of Friends') highlights the power of solidarity through four unlikely companions — a crow, a mouse, a turtle, and a deer — who combine their unique skills to save one another from hunter traps.",
+                analysis: "Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow, its a reminder that misinformation harms not just individuals but whole groups. Book 2 shows the opposite: four very different animals working together to survive, proving that true strength comes from unity, loyalty, and standing by each other. This teaches me that in both life and tech projects, open communication and trust are key to success.",
+                learnings: [
+                    "Guarding against rumors and malicious gossip preserves trust and unity.",
+                    "Diverse individual talents, when combined, create unbeatable team strength.",
+                    "Mutual loyalty and quick joint problem-solving overcome insurmountable obstacles."
+                ]
+            },
+            3: {
+                title: "Ramayana",
+                author: "Attributed to Valmiki",
+                lens: "Ethical / Cultural Criticism",
+                image: "ramayana.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600",
+                overview: "The Ramayana follows Prince Rama, the avatar of virtue and righteousness (Dharma), who accepts a fourteen-year exile into the forest to honor his father's promise. When his wife Sita is abducted by the demon king Ravana, Rama embarks on an epic quest supported by his loyal brother Lakshmana and the devoted monkey-warrior Hanuman to defeat evil and restore ethical order to the world.",
+                analysis: "The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain, even when the path is difficult. His dedication to duty inspires me to carry out my responsibilities with honesty, whether in my personal life, academic work, or future career in IT. It reminds me that short cuts and easy choices can never replace character and moral principle.",
+                learnings: [
+                    "Dharma (duty and righteous conduct) must guide all decisions over personal comfort.",
+                    "Integrity means keeping promises even when faced with severe personal sacrifice.",
+                    "Pride and unlawful desires lead to inevitable downfall, while honor endures."
+                ]
+            },
+            4: {
+                title: "Mahabharata",
+                author: "Attributed to Vyasa",
+                lens: "Ethical / Humanist Criticism",
+                image: "mahabharata.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=600",
+                overview: "The Mahabharata is a colossal epic narrating the devastating Kurukshetra War between two sets of royal cousins, the righteous Pandavas and the greedy Kauravas. Entwined within its narrative is the Bhagavad Gita, in which Lord Krishna counsels Prince Arjuna on duty, righteousness, detachment from results, and the complex nature of human morality in times of conflict.",
+                analysis: "The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes. The story teaches that loyalty to family is important, but loyalty to what is just matters more. Through the concept of Karma, it reminds me that every action has consequences. As a future tech developer, this inspires me to think carefully about the impact of what I create, ensuring my work always serves the truth and fair principles.",
+                learnings: [
+                    "Perform duties with excellence without toxic attachment to ego or specific outcomes.",
+                    "Every moral choice carries consequences (Karma) that shape future realities.",
+                    "Justice and truth outweigh unconditional allegiance to misguided loyalty."
+                ]
+            },
+            5: {
+                title: "The Odyssey",
+                author: "Attributed to Homer",
+                lens: "Archetypal Criticism",
+                image: "odyssey.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=600",
+                overview: "The Odyssey recounts the ten-year journey of the Greek hero Odysseus as he struggles to return home to Ithaca after the fall of Troy. Facing monstrous opponents like the Cyclops Polyphemus, deadly temptations like the Sirens, and divine wrath, Odysseus relies on his wits, intellect, and endurance to reunite with his faithful wife Penelope and son Telemachus.",
+                analysis: "The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays, yet he keeps moving forward because he holds fast to what he loves. His story reminds me that success requires patience, resilience, and self-control. When I encounter failures or setbacks in my studies or personal projects, I am encouraged to stay focused on my ultimate goal and never give up.",
+                learnings: [
+                    "Perseverance and sharp problem-solving overcome brute force and adversity.",
+                    "Resisting short-term temptations keeps one focused on ultimate life goals.",
+                    "Life is a long journey of transformation that tests and refines character."
+                ]
+            },
+            6: {
+                title: "Les Misérables",
+                author: "Victor Hugo",
+                lens: "Social / Moral Criticism",
+                image: "lesmiserables.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600",
+                overview: "Set in 19th-century France, Les Misérables follows Jean Valjean, an ex-convict imprisoned for 19 years for stealing a loaf of bread. Transformed by the extraordinary mercy of Bishop Myriel, Valjean dedicates his life to honest work, raising the orphaned Cosette, and protecting others while continuously hunted by the unyielding inspector Javert, who believes criminals can never reform.",
+                analysis: "Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made or how society labels us, we can always choose to become better. It challenges me to see people with compassion rather than strict judgment, reminding me that true progress; whether personal, societal, or technological, should aim to lift others up and show understanding.",
+                learnings: [
+                    "Compassion and grace have far greater power to redeem human lives than rigid legalism.",
+                    "No person is beyond redemption; choices define character, not past mistakes.",
+                    "Social systems must be built with empathy to protect and elevate the vulnerable."
+                ]
+            },
+            7: {
+                title: "Psalm 91",
+                author: "From the Holy Scriptures",
+                lens: "Religious / Spiritual Criticism",
+                image: "psalm91.jpg",
+                fallbackImage: "https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&q=80&w=600",
+                overview: "Psalm 91 is a poetic biblical prayer of protection, comfort, and divine shelter. It depicts God as a fortress, a refuge, and a protecting wing that guards the faithful against secret snares, pestilence, and nighttime terrors, promising divine presence and deliverance to those who love and trust Him.",
+                analysis: "Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come, but that we will face them with confidence, knowing God is our refuge. As a student carrying the weights of academic stress and personal challenges, this Psalm reassures me that peace comes from trusting in divine protection and staying rooted in hope.",
+                learnings: [
+                    "Faith provides an unshakeable spiritual refuge amidst life's chaos and anxieties.",
+                    "Trusting in divine protection dispels fear and restores inner fortitude.",
+                    "Inner peace is found by grounding one's heart in hope and spiritual conviction."
+                ]
+            }
+        };
+
+        function openModal(id) {
+            const data = storiesData[id];
+            if (!data) return;
+
+            document.getElementById('modalLens').textContent = data.lens;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalAuthor').textContent = data.author;
+
+            const imgElement = document.getElementById('modalImage');
+            imgElement.src = data.image;
+            imgElement.onerror = function() {
+                this.src = data.fallbackImage;
+            };
+
+            document.getElementById('modalStoryOverview').textContent = data.overview;
+            document.getElementById('modalAnalysisText').textContent = data.analysis;
+
+            const list = document.getElementById('modalLearningsList');
+            list.innerHTML = '';
+            data.learnings.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+            });
+
+            document.getElementById('storyModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('storyModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleBackdropClick(event) {
+            if (event.target.id === 'storyModal') {
+                closeModal();
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        window.onload = function() {
+            lucide.createIcons();
+        };
     </script>
 </body>
 </html>
