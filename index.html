@@ -4,84 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renan S. Alburo | Great Books Digital Portfolio</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['Cinzel', 'Georgia', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        amberGold: '#F59E0B',
-                        royalPurple: '#4C1D95',
-                        deepBurgundy: '#881337',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #0b0914;
             color: #e2e8f0;
         }
-
         .font-serif-title {
             font-family: 'Cinzel', serif;
         }
-
-        /* Glassmorphism Classes */
         .glass-card {
             background: rgba(22, 18, 38, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 215, 0, 0.12);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-
         .glass-card-hover {
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
-
         .glass-card-hover:hover {
-            transform: translateY(-6px);
-            background: rgba(32, 25, 56, 0.85);
-            border-color: rgba(245, 158, 11, 0.45);
-            box-shadow: 0 14px 40px 0 rgba(245, 158, 11, 0.18);
+            transform: translateY(-5px);
+            background: rgba(30, 24, 52, 0.85);
+            border-color: rgba(234, 179, 8, 0.4);
+            box-shadow: 0 12px 40px 0 rgba(234, 179, 8, 0.2);
         }
-
         .glass-nav {
-            background: rgba(11, 9, 20, 0.88);
+            background: rgba(11, 9, 20, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 215, 0, 0.15);
         }
-
         .gold-gradient-text {
             background: linear-gradient(135deg, #FFF5C0 0%, #EAB308 50%, #CA8A04 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        /* Hero Background Overlay */
-        .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(11, 9, 20, 0.75), rgba(11, 9, 20, 0.95)), url('https://images.unsplash.com/photo-1457369804613-52c61a465e75?auto=format&fit=crop&q=80&w=1600');
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Ambient Glowing Background Orbs */
         .bg-ambient {
             position: fixed;
             top: 0;
@@ -92,31 +53,18 @@
             overflow: hidden;
             pointer-events: none;
         }
-
         .ambient-orb {
             position: absolute;
             border-radius: 50%;
-            filter: blur(130px);
+            filter: blur(120px);
             opacity: 0.25;
         }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0b0914;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #4c1d95;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b;
+        .hero-bg-overlay {
+            background: linear-gradient(to bottom, rgba(11, 9, 20, 0.75), rgba(11, 9, 20, 0.95));
         }
     </style>
 </head>
-<body class="relative min-h-screen selection:bg-amber-500/30 selection:text-amber-200">
+<body class="relative min-h-screen selection:bg-yellow-500/30 selection:text-yellow-200">
 
     <!-- Ambient Glow Background -->
     <div class="bg-ambient">
@@ -126,7 +74,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav class="fixed top-0 left-0 w-full z-40 glass-nav px-6 py-4 transition-all duration-300">
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav px-6 py-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#hero" class="flex items-center space-x-3 group">
                 <i data-lucide="book-open" class="w-7 h-7 text-amber-400 transition-transform group-hover:rotate-6"></i>
@@ -144,23 +92,26 @@
     </nav>
 
     <!-- Main Content Container -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 space-y-28">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20 space-y-28">
 
-        <!-- Hero Banner with Blended Background Image -->
-        <section id="hero" class="text-center py-20 px-6 rounded-3xl hero-bg border border-amber-500/20 shadow-2xl relative overflow-hidden">
-            <div class="absolute inset-0 backdrop-blur-sm bg-slate-950/40"></div>
+        <!-- Hero Banner with Custom Background Image -->
+        <section id="hero" class="relative rounded-3xl overflow-hidden py-20 px-6 text-center border border-amber-500/20 shadow-2xl">
+            <!-- Header Background Image (File Name: hero-bg.jpg) -->
+            <img src="hero-bg.jpg" alt="Header Background" class="absolute inset-0 w-full h-full object-cover opacity-40 z-0" onerror="this.style.display='none'">
+            <div class="absolute inset-0 hero-bg-overlay z-0"></div>
+
             <div class="relative z-10 max-w-4xl mx-auto">
                 <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full glass-card border-amber-500/30 text-amber-300 text-xs tracking-widest uppercase mb-6">
                     <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
                     <span>Culminating Performance Task</span>
                 </div>
-                <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight drop-shadow-lg">
+                <h1 class="font-serif-title text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-tight">
                     My Literary Journey
                 </h1>
                 <p class="font-serif-title text-xl sm:text-2xl gold-gradient-text mt-3 font-semibold">
                     A Great Books Digital Portfolio
                 </p>
-                <p class="max-w-2xl mx-auto mt-6 text-slate-200 text-base sm:text-lg leading-relaxed font-light drop-shadow">
+                <p class="max-w-2xl mx-auto mt-6 text-slate-300 text-base sm:text-lg leading-relaxed font-light">
                     Bridging the logical precision of Information Technology with the timeless wisdom, human values, and moral insight of world literature.
                 </p>
             </div>
@@ -173,7 +124,7 @@
                     <div class="relative shrink-0">
                         <!-- Round Profile Image Frame -->
                         <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/60 shadow-2xl relative z-10">
-                            <img src="profile1.jpg" onerror="this.src='https://placehold.co/400x400/201838/F59E0B?text=Renan+S.+Alburo'" alt="Renan S. Alburo" class="w-full h-full object-cover">
+                            <img src="profile1.jpg" alt="Renan S. Alburo" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-purple-600 rounded-full blur-xl opacity-50 z-0"></div>
                     </div>
@@ -213,264 +164,282 @@
         <section id="analyses" class="scroll-mt-28">
             <div class="text-center mb-12">
                 <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white">Compilation of Seven Literary Analyses</h2>
-                <p class="text-slate-400 mt-2 text-sm md:text-base">Click on any story card below to open the complete script overview, applied lens analysis, and key takeaways.</p>
+                <p class="text-slate-400 mt-2 text-sm md:text-base">Explorations of timeless masterpieces analyzed through distinct critical lenses. Click any card to read full details.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 <!-- 1. Book of Job -->
-                <div onclick="openModal(1)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('job')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="job.jpg" onerror="this.src='https://images.unsplash.com/photo-1509021436468-d51039747127?auto=format&fit=crop&q=80&w=600'" alt="Whirlwind" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="job.jpg" alt="Whirlwind" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Moral Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">The Voice Out of the Whirlwind</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">The Voice Out of the Whirlwind</h3>
                         <p class="text-xs text-amber-400/80 mb-3">From the Book of Job (Biblical text)</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 2. Panchatantra -->
-                <div onclick="openModal(2)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('panchatantra')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="panchatantra.jpg" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600'" alt="Forest Friends" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="panchatantra.jpg" alt="Forest Friends" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Moral / Didactic Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Panchatantra — Books 1 & 2</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">Panchatantra — Books 1 & 2</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Vishnu Sharma</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 3. Ramayana -->
-                <div onclick="openModal(3)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('ramayana')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="ramayana.jpg" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600'" alt="Ramayana" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="ramayana.jpg" alt="Ramayana" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Cultural Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Ramayana</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">Ramayana</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Valmiki</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            The Ramayana stands as a guide to living with honor, duty, and integrity...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 4. Mahabharata -->
-                <div onclick="openModal(4)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('mahabharata')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="mahabharata.jpg" onerror="this.src='https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=600'" alt="Chariot Battlefield" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="mahabharata.jpg" alt="Chariot Battlefield" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Ethical / Humanist Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Mahabharata</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">Mahabharata</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Vyasa</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 5. The Odyssey -->
-                <div onclick="openModal(5)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('odyssey')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="odyssey.jpg" onerror="this.src='https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=600'" alt="Seafaring Voyage" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="odyssey.jpg" alt="Seafaring Voyage" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Archetypal Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">The Odyssey</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">The Odyssey</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Attributed to Homer</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 6. Les Misérables -->
-                <div onclick="openModal(6)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
+                <div onclick="openAnalysisModal('lesmiserables')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="lesmiserables.jpg" onerror="this.src='https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600'" alt="Candlesticks Light" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
+                            <img src="lesmiserables.jpg" alt="Candlesticks Light" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
+                                </span>
+                            </div>
                         </div>
                         <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Social / Moral Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Les Misérables</h3>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">Les Misérables</h3>
                         <p class="text-xs text-amber-400/80 mb-3">Victor Hugo</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made...
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can...
                         </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
                     </div>
                 </div>
 
                 <!-- 7. Psalm 91 -->
-                <div onclick="openModal(7)" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group md:col-span-2 lg:col-span-1">
+                <div onclick="openAnalysisModal('psalm91')" class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between cursor-pointer group md:col-span-2 lg:col-span-1">
                     <div>
                         <div class="h-44 rounded-xl overflow-hidden mb-4 border border-amber-500/20 relative">
-                            <img src="psalm91.jpg" onerror="this.src='https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&q=80&w=600'" alt="Light in Darkness" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                            <span class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-slate-950/80 text-amber-300 text-[11px] font-semibold border border-amber-500/30">
-                                Click to Read
-                            </span>
-                        </div>
-                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Spiritual Criticism</span>
-                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-400 transition">Psalm 91</h3>
-                        <p class="text-xs text-amber-400/80 mb-3">From the Holy Scriptures</p>
-                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
-                            Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come...
-                        </p>
-                    </div>
-                    <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs text-amber-400 font-semibold">
-                        <span>View Full Story & Analysis</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition"></i>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION 3: Favorite Literary Masterpiece (Interactive Card Showcase) -->
-        <section id="favorite" class="scroll-mt-28">
-            <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div class="max-w-5xl mx-auto space-y-8">
-                    <div class="text-center">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 3 Interactive Showcase</span>
-                        <h2 class="font-serif-title text-3xl md:text-5xl font-bold text-white mt-3">My Favorite Literary Masterpiece</h2>
-                    </div>
-
-                    <!-- Visual Masterpiece Showcase Card -->
-                    <div onclick="openFavoriteModal()" class="glass-card glass-card-hover rounded-3xl p-6 md:p-8 cursor-pointer group border-amber-500/30 relative overflow-hidden">
-                        <div class="flex flex-col lg:flex-row items-center gap-8">
-                            <div class="w-full lg:w-1/2 h-64 md:h-80 rounded-2xl overflow-hidden border border-amber-500/30 relative shrink-0">
-                                <img src="panchatantra.jpg" onerror="this.src='https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800'" alt="Panchatantra Artwork" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
-                                <span class="absolute bottom-4 left-4 px-3 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs">
-                                    Click to Open Complete Personal Story
+                            <img src="psalm91.jpg" alt="Light in Darkness" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                                <span class="px-3 py-1 rounded-full bg-amber-500/80 text-black font-semibold text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <i data-lucide="book-open" class="w-3.5 h-3.5"></i> Read Analysis
                                 </span>
                             </div>
+                        </div>
+                        <span class="px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">Religious / Spiritual Criticism</span>
+                        <h3 class="font-serif-title text-xl font-bold text-white mt-3 group-hover:text-amber-300 transition-colors">Psalm 91</h3>
+                        <p class="text-xs text-amber-400/80 mb-3">From the Holy Scriptures</p>
+                        <p class="text-slate-300 text-sm line-clamp-3 leading-relaxed">
+                            Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us...
+                        </p>
+                    </div>
+                </div>
 
-                            <div class="space-y-4 text-slate-300">
-                                <span class="px-3 py-1 rounded-md bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold">Vishnu Sharma</span>
-                                <h3 class="font-serif-title text-2xl md:text-3xl font-bold text-white group-hover:text-amber-400 transition">Panchatantra — Book 1 and Book 2</h3>
-                                <p class="text-sm leading-relaxed text-slate-300 line-clamp-3">
-                                    I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I spent months pouring my effort into our capstone project, traveling all the way to Burias for data collection...
-                                </p>
-                                <div class="inline-flex items-center space-x-2 text-amber-400 font-semibold text-sm pt-2">
-                                    <span>Read Full Narrative & 4 Core Lessons</span>
-                                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-2 transition"></i>
-                                </div>
-                            </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Favorite Literary Masterpiece (Interactive Clickable Card & Full Narrative Modal) -->
+        <section id="favorite" class="scroll-mt-28">
+            <div class="text-center mb-8">
+                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 3 Showcase</span>
+                <h2 class="font-serif-title text-3xl md:text-5xl font-bold text-white mt-3">My Favorite Literary Masterpiece</h2>
+                <p class="text-slate-400 text-sm mt-2">Click the card below to read the complete personal narrative, images, and analysis.</p>
+            </div>
+
+            <!-- Featured Clickable Card for Panchatantra -->
+            <div onclick="openFavoriteModal()" class="glass-card glass-card-hover rounded-3xl p-8 md:p-12 cursor-pointer group relative overflow-hidden">
+                <div class="flex flex-col lg:flex-row items-center gap-8">
+                    <div class="w-full lg:w-1/2 h-64 md:h-80 rounded-2xl overflow-hidden border border-amber-500/30 relative">
+                        <img src="panchatantra.jpg" alt="Panchatantra Masterpiece" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-6">
+                            <span class="px-4 py-2 rounded-full bg-amber-500 text-black font-bold text-xs flex items-center gap-2 shadow-lg">
+                                <i data-lucide="book-open-check" class="w-4 h-4"></i> Click to Open Full Narrative & Analysis
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-1/2 space-y-4">
+                        <span class="px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-semibold">Moral & Didactic Fable</span>
+                        <h3 class="font-serif-title text-3xl md:text-4xl font-bold text-white group-hover:text-amber-300 transition-colors">Panchatantra — Books 1 & 2</h3>
+                        <p class="text-amber-400 text-sm font-medium">Attributed to Vishnu Sharma</p>
+                        <p class="text-slate-300 text-sm leading-relaxed line-clamp-4">
+                            "I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I built our capstone system, traveled all the way to Burias to collect data, and finished my tasks early. But when I got sick, everything fell apart..."
+                        </p>
+                        <div class="pt-2 flex items-center text-amber-400 text-xs font-semibold uppercase tracking-wider group-hover:translate-x-2 transition-transform">
+                            <span>Read Full Story & Lessons</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 4: Summary of Learning (Interactive Dashboard) -->
+        <!-- SECTION 4: Summary of Learning (Interactive Tabs) -->
         <section id="summary" class="scroll-mt-28">
             <div class="glass-card rounded-3xl p-8 md:p-12">
-                <div class="max-w-5xl mx-auto space-y-8">
-                    <div class="text-center">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 4 Learning Dashboard</span>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div class="text-center mb-6">
+                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Section 4 Synthesis</span>
                         <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Summary of Learning</h2>
-                        <p class="text-slate-400 text-sm mt-1">Select any category tab below to explore my detailed takeaways from the Great Books curriculum.</p>
+                        <p class="text-slate-400 text-sm mt-1">Explore my core learning modules through interactive tabs below.</p>
                     </div>
 
-                    <!-- Interactive Learning Category Tabs -->
-                    <div class="flex flex-wrap justify-center gap-2 border-b border-white/10 pb-4" id="learningTabs">
-                        <button onclick="switchTab(0)" class="tab-btn active px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition">1. Elements of Literature</button>
-                        <button onclick="switchTab(1)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">2. Literary Devices</button>
-                        <button onclick="switchTab(2)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">3. Critical Lenses</button>
-                        <button onclick="switchTab(3)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">4. Short Masterpieces</button>
-                        <button onclick="switchTab(4)" class="tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition">5. Overall Synthesis</button>
+                    <!-- Tabs Navigation -->
+                    <div class="flex flex-wrap justify-center gap-2 border-b border-amber-500/20 pb-4">
+                        <button onclick="switchTab(1)" id="tab-btn-1" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-amber-500 text-black">1. Elements of Literature</button>
+                        <button onclick="switchTab(2)" id="tab-btn-2" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:text-white">2. Literary Devices</button>
+                        <button onclick="switchTab(3)" id="tab-btn-3" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:text-white">3. Literary Lenses</button>
+                        <button onclick="switchTab(4)" id="tab-btn-4" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:text-white">4. Short Stories</button>
+                        <button onclick="switchTab(5)" id="tab-btn-5" class="px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:text-white">5. Core Insights</button>
                     </div>
 
-                    <!-- Learning Content Display Container -->
-                    <div id="tabContent" class="glass-card rounded-2xl p-6 sm:p-8 border-amber-500/20 text-slate-300 text-base leading-relaxed">
-                        <!-- Content inserted dynamically via JS -->
+                    <!-- Tab Contents -->
+                    <div class="glass-card rounded-2xl p-8 border-amber-500/20 text-slate-300 text-base leading-relaxed">
+                        <div id="tab-content-1" class="space-y-4">
+                            <h3 class="font-serif-title text-xl font-bold text-amber-300">Elements of Literature</h3>
+                            <p>Throughout the Great Books course, I learned so many important things that helped me understand stories and life in new ways. First, we studied the Elements of Literature. These are the basic parts that make every story complete — characters, setting, plot, conflict, and theme. I learned that characters are the people in the story; setting is where and when it happens; plot is the sequence of events; conflict is the problem the characters face; and theme is the main message or lesson about life. Knowing these elements helped me see how every part of a story connects and why each one is important.</p>
+                        </div>
+                        <div id="tab-content-2" class="hidden space-y-4">
+                            <h3 class="font-serif-title text-xl font-bold text-amber-300">Literary Devices</h3>
+                            <p>Next, we learned about Literary Devices. These are special tools writers use to make their stories meaningful, beautiful, and deep. I learned about symbols — where one thing stands for a bigger idea, like a flower standing for growth or a butterfly standing for change. We also learned about metaphors, comparisons, repetition, and imagery that helps us see and feel what the writer wants to say. These devices showed me that stories do not always explain things directly — sometimes they show us deeper truths through these special ways.</p>
+                        </div>
+                        <div id="tab-content-3" class="hidden space-y-4">
+                            <h3 class="font-serif-title text-xl font-bold text-amber-300">Literary Lenses</h3>
+                            <p>Then we studied Literary Lenses. These are like different ways of looking at a story to understand it more deeply. Instead of just reading to know what happens, we can look through a lens to find more meaning. For example, the moral lens helps us see lessons about right and wrong; the social lens shows how people treat each other; and the spiritual lens helps us see messages about faith, hope, and purpose. I learned that one story can have many meanings, and these lenses help me find lessons that I can use in my own life.</p>
+                        </div>
+                        <div id="tab-content-4" class="hidden space-y-4">
+                            <h3 class="font-serif-title text-xl font-bold text-amber-300">Short Literary Masterpieces</h3>
+                            <p>We also read and analyzed wonderful stories — "Hope for the Flowers" and "Everywhere in a Garden". These stories are simple but very powerful. Hope for the Flowers taught me about growing up, finding your own way, and not giving up even when things are hard. Everywhere in a Garden showed me that every plant has its own time to grow and bloom, just like every person. While reading these, I practiced finding literary elements, identifying devices like symbols, and using lenses to understand the deeper messages.</p>
+                        </div>
+                        <div id="tab-content-5" class="hidden space-y-4">
+                            <h3 class="font-serif-title text-xl font-bold text-amber-300">Core Insights & Thinking Skills</h3>
+                            <p>Overall, this course taught me that literature is not just about reading books or finishing schoolwork. It is about understanding people, cultures, and life itself. I developed better thinking skills — I learned to observe carefully, ask questions, connect stories to real life, and explain what I understand clearly. I learned that every story, no matter how simple, has something valuable to teach us.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: Personal Reflection (Interactive Journey Stepper) -->
+        <!-- SECTION 5: Personal Reflection (Interactive Stepper Journey) -->
         <section id="reflection" class="scroll-mt-28">
             <div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                <div class="max-w-5xl mx-auto space-y-8">
-                    <div class="text-center">
-                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">Section 5 Reflection Journey</span>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <div class="text-center mb-6">
+                        <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-semibold uppercase tracking-wider">Section 5 Essay</span>
                         <h2 class="font-serif-title text-3xl md:text-4xl font-bold text-white mt-3">Personal Reflection</h2>
-                        <p class="text-slate-400 text-sm mt-1">Click through the 5 reflection milestones to view my personal growth narrative.</p>
+                        <p class="text-slate-400 text-sm mt-1">Click each stage of my 5-step reflection journey below.</p>
                     </div>
 
-                    <!-- Stepper Grid Buttons -->
-                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-3">
-                        <button onclick="selectReflectionStep(0)" class="refl-step active p-3 rounded-xl bg-purple-600 text-white font-semibold text-xs text-center transition border border-purple-400/40">
-                            Step 1: Reader Growth
-                        </button>
-                        <button onclick="selectReflectionStep(1)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
-                            Step 2: Challenges
-                        </button>
-                        <button onclick="selectReflectionStep(2)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
-                            Step 3: Moral Lens
-                        </button>
-                        <button onclick="selectReflectionStep(3)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
-                            Step 4: Life Truths
-                        </button>
-                        <button onclick="selectReflectionStep(4)" class="refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10">
-                            Step 5: IT Career Vision
-                        </button>
+                    <!-- Stepper Buttons -->
+                    <div class="grid grid-cols-1 sm:grid-cols-5 gap-2">
+                        <button onclick="switchStep(1)" id="step-btn-1" class="p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-purple-600 text-white">Step 1: Reader Growth</button>
+                        <button onclick="switchStep(2)" id="step-btn-2" class="p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-slate-800/80 text-slate-300 hover:text-white">Step 2: Challenges</button>
+                        <button onclick="switchStep(3)" id="step-btn-3" class="p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-slate-800/80 text-slate-300 hover:text-white">Step 3: Moral Lens</button>
+                        <button onclick="switchStep(4)" id="step-btn-4" class="p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-slate-800/80 text-slate-300 hover:text-white">Step 4: Life Lessons</button>
+                        <button onclick="switchStep(5)" id="step-btn-5" class="p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-slate-800/80 text-slate-300 hover:text-white">Step 5: IT Career</button>
                     </div>
 
-                    <!-- Reflection Display Card -->
-                    <div id="reflectionDisplay" class="glass-card rounded-2xl p-6 sm:p-8 border-purple-500/30 text-slate-300 text-base leading-relaxed">
-                        <!-- Content inserted dynamically via JS -->
+                    <!-- Step Content Card -->
+                    <div class="glass-card rounded-2xl p-8 border-purple-500/30 text-slate-300 text-base leading-relaxed">
+                        <div id="step-content-1" class="space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">Stage 1</span>
+                            <h3 class="font-serif-title text-xl font-bold text-white">Growth as a Reader</h3>
+                            <p>Studying Great Books has been a meaningful journey for me. Before this course, I used to read stories just to finish them or answer assignments. I did not look for deeper meanings or connect them to my own life. But as we went through the lessons, my understanding and appreciation changed completely. I began to see that every story is not just words on a page — it carries real feelings, true experiences, and lessons that still guide us today. I learned that literature shows what people have lived, believed, and hoped for across time, and the truths we find in books can help us understand ourselves and the people around us better.</p>
+                        </div>
+                        <div id="step-content-2" class="hidden space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">Stage 2</span>
+                            <h3 class="font-serif-title text-xl font-bold text-white">Overcoming Reading Challenges</h3>
+                            <p>Along the way, I faced some challenges. Some stories did not say things directly, and I had to think carefully to understand the symbols and hidden messages. At first, it was also hard to identify literary devices or know which lens to use when analyzing a work. I overcame these difficulties by reading slowly, taking notes, and connecting what I read to my own life — to my family, my friends, my struggles, and my dreams. When I linked the stories to what I already knew and felt, everything became clearer and easier to understand.</p>
+                        </div>
+                        <div id="step-content-3" class="hidden space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">Stage 3</span>
+                            <h3 class="font-serif-title text-xl font-bold text-white">The Moral & Life-Centered Lens</h3>
+                            <p>Among all the approaches we learned, the moral and life-centered lens influenced me the most. This lens looks at lessons about right and wrong, personal growth, and what truly matters in life. It helped me see that no one is perfect — not the characters in the stories, and not us either. It showed me that making mistakes does not mean we are bad people; it means we are human, and we can always choose to do better. This approach touched me deeply because it does not just judge — it understands, and it gives hope that we can change and grow at any time.</p>
+                        </div>
+                        <div id="step-content-4" class="hidden space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">Stage 4</span>
+                            <h3 class="font-serif-title text-xl font-bold text-white">Realizations About Life & Society</h3>
+                            <p>Through these lessons and stories, I gained important realizations about life, people, and myself. From Hope for the Flowers and Everywhere in a Garden, I learned that growth takes time and everyone has their own pace. I should not rush myself or compare my journey to others, just as flowers do not all bloom at the same moment. From other stories, I saw that true friendship means staying loyal and fair, even when things get hard. I learned that people are complex — we all have strengths and weaknesses, joys and sorrows — and we should be kind to one another because we do not always know what someone else is going through. I realized that doing the right thing is not always easy, but it is always worth it.</p>
+                        </div>
+                        <div id="step-content-5" class="hidden space-y-3">
+                            <span class="text-xs font-bold uppercase tracking-wider text-purple-300">Stage 5</span>
+                            <h3 class="font-serif-title text-xl font-bold text-white">Application to Personal Life & IT Career</h3>
+                            <p>I will carry all these lessons with me in every part of my life. Personally, I will value myself more, trust my own path, and surround myself with people who stay true. I will be kind, patient, and honest, even when others are not. In my studies, I will work with purpose, give my best not just for grades but for real learning, and stand up for what is fair. In my future career as an IT professional, I will remember that technology is made for people. I will use my skills to help and respect others, to build things that serve everyone well, and to always treat people with dignity. Great Books taught me that being a good person is just as important as being skilled — and that is the most valuable lesson I will take with me forever.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -478,373 +447,213 @@
 
     </main>
 
+    <!-- SECTION 2 ANALYSIS MODAL DRAWER -->
+    <div id="analysis-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
+        <div class="glass-card rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative border-amber-500/30 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeAnalysisModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-slate-800/60">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-body" class="space-y-6">
+                <!-- Content dynamically injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 3 FAVORITE MASTERPIECE MODAL DRAWER -->
+    <div id="favorite-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md overflow-y-auto">
+        <div class="glass-card rounded-3xl max-w-4xl w-full p-6 sm:p-10 relative border-amber-500/40 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeFavoriteModal()" class="absolute top-5 right-5 text-slate-400 hover:text-white p-2 rounded-full bg-slate-800/60">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="space-y-8">
+                <div class="text-center">
+                    <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">Favorite Masterpiece Narrative</span>
+                    <h2 class="font-serif-title text-3xl sm:text-4xl font-bold text-white mt-2">Panchatantra — Book 1 & Book 2</h2>
+                    <p class="text-amber-400 text-sm">Attributed to Vishnu Sharma</p>
+                </div>
+
+                <!-- Picture Gallery Section inside Favorite Masterpiece -->
+                <div class="h-64 sm:h-80 rounded-2xl overflow-hidden border border-amber-500/30">
+                    <img src="panchatantra.jpg" alt="Panchatantra Visual Artwork" class="w-full h-full object-cover">
+                </div>
+
+                <div class="space-y-6 text-slate-300 text-base leading-relaxed">
+                    <div class="glass-card rounded-2xl p-6 border-amber-500/30">
+                        <h3 class="font-serif-title text-lg font-bold text-amber-300 mb-2">Brief Overview of the Story</h3>
+                        <p>The Panchatantra is an old collection of stories told through animals, and every story carries a real lesson about life. Book 1 focuses on how easily strong friendships can fall apart — not because of big fights, but because of doubt, rumors, and letting outside words get between people. It shows that once trust is broken, it is hard to bring back what was there before. Book 2 tells the story of four very different friends: a crow, a mouse, a turtle, and a deer. They do not look alike or have the same strengths, but they care for each other deeply. When one is in trouble, the others do not run away — they think together, help each other, and find a way to keep everyone safe. Both books together show clearly what real friendship should look like — loyalty, honesty, and staying together through good times and hard times.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif-title text-xl font-bold text-white mb-3">Why This Is My Favorite (Personal Capstone Story)</h3>
+                        <p>I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I have a group of friends I have known since Senior High School. We were together through exams, projects, and even personal problems. We promised we would finish college together and graduate side by side. But now, in our 4th year, everything changed — all because of our thesis and capstone project.</p>
+                        <p class="mt-3">I poured so much of myself into our work. I built the first version of our system from the beginning. I traveled all the way to Burias to gather the data we needed — that trip was tiring and far from home, but I did it for our group. I finished my tasks early so we would not be rushed, and I even helped my friends with their work so no one would struggle or fall behind. When I got sick from all the pressure and had to go home to rest, I missed some consultations — and that was when everything fell apart. Instead of asking how I was or waiting for me to get better, they removed me from the group completely. They acted like I gave nothing at all, like I never stayed up late, traveled far, or did extra work. It hurt so much — and this story helped me see that what happened is not what real friendship is. That is why this means so much to me.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-serif-title text-xl font-bold text-white mb-4">Lessons That Truly Stuck With Me</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                <h4 class="font-semibold text-amber-300 text-sm mb-1">True friendship does not fade when things get hard</h4>
+                                <p class="text-xs text-slate-300">The four friends in Book 2 did not leave each other just because danger came. They stayed and helped. I learned that people who truly care for you do not turn their backs the moment you cannot be there or when you are going through something difficult. They check on you. They wait. They understand.</p>
+                            </div>
+                            <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                <h4 class="font-semibold text-amber-300 text-sm mb-1">Your hard work should never be erased</h4>
+                                <p class="text-xs text-slate-300">Book 1 shows how people can forget everything you have given once they start listening to rumors or believing wrong things. I realized that what I did — building the system, collecting data, helping everyone — was real and valuable. No one can make those things disappear just because they choose to ignore them.</p>
+                            </div>
+                            <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                <h4 class="font-semibold text-amber-300 text-sm mb-1">Friendship works both ways</h4>
+                                <p class="text-xs text-slate-300">I always gave my best — I helped, I understood, I carried extra work — but I did not get the same in return. I learned that being a friend is not just about what you can do for others. It is also about them caring for you. If people only value you when you are useful, that is not friendship — that is being used.</p>
+                            </div>
+                            <div class="glass-card rounded-xl p-5 border-amber-500/20">
+                                <h4 class="font-semibold text-amber-300 text-sm mb-1">Every person’s part matters</h4>
+                                <p class="text-xs text-slate-300">In Book 2, each animal had a different strength, and all were needed to help one another. My skills and effort were important to our project too. I should not have to beg to be seen or recognized for what I did.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 border-purple-500/30">
+                        <h3 class="font-serif-title text-lg font-bold text-purple-300 mb-2">What I Truly Realized</h3>
+                        <p class="italic text-slate-200">"Going through this experience made these stories feel less like lessons in a book and more like something I lived myself. I felt sad, confused, and afraid — afraid I would lose my chance to graduate, afraid my work would be taken credit for, and hurt that people I loved for years could treat me like I never mattered. I gave my time, my energy, and even my health for our group. And still, they chose to push me aside. But as I thought about these stories, I realized something important: I did not fail our friendship. I kept my promises. I gave my best. I was loyal. It was they who forgot what being a friend really means.<br><br>I will still be kind and helpful — that is just who I am. But now I know I deserve the same care I give. I know that real friends will see my effort, believe in me, and stand by me even when things are messy. I may have lost these friends, but I found something more important: I know my worth. I will finish my studies, I will graduate, and I will succeed — not because of them, but because of me. And one day, I will surround myself with people who stay, who value me, and who remember that loyalty is the most precious thing we can share."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="border-t border-amber-500/20 py-8 text-center text-xs text-slate-400">
         <p>© Great Books Digital Portfolio • Renan S. Alburo • BSIT 4th Year</p>
     </footer>
 
-    <!-- MODAL 1: FAVORITE MASTERPIECE MODAL (SECTION 3) -->
-    <div id="favoriteModal" onclick="handleFavBackdrop(event)" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-        <div class="glass-card border border-amber-500/40 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl my-8">
-            <button onclick="closeFavoriteModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-rose-600 transition flex items-center justify-center">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-
-            <div class="text-center space-y-2 pr-6">
-                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold uppercase tracking-wider">
-                    Favorite Masterpiece Deep Dive
-                </span>
-                <h3 class="font-serif-title text-2xl sm:text-4xl font-bold text-white">Panchatantra — Book 1 and Book 2</h3>
-                <p class="text-xs text-amber-400 font-medium">Attributed to Vishnu Sharma</p>
-            </div>
-
-            <div class="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed border-t border-white/10 pt-4">
-                <div class="glass-card rounded-2xl p-6 border-amber-500/30 bg-white/5">
-                    <h4 class="font-serif-title text-lg font-bold text-amber-300 mb-2">Brief Overview</h4>
-                    <p>The Panchatantra is an old collection of stories told through animals, and every story carries a real lesson about life. Book 1 focuses on how easily strong friendships can fall apart — not because of big fights, but because of doubt, rumors, and letting outside words get between people. It shows that once trust is broken, it is hard to bring back what was there before. Book 2 tells the story of four very different friends: a crow, a mouse, a turtle, and a deer. They do not look alike or have the same strengths, but they care for each other deeply. When one is in trouble, the others do not run away — they think together, help each other, and find a way to keep everyone safe. Both books together show clearly what real friendship should look like — loyalty, honesty, and staying together through good times and hard times.</p>
-                </div>
-
-                <div class="space-y-3">
-                    <h4 class="font-serif-title text-xl font-bold text-white">Why This Is My Favorite</h4>
-                    <p>I chose this as my favorite because every lesson in these stories matches exactly what I am going through right now. I have a group of friends I have known since Senior High School. We were together through exams, projects, and even personal problems. We promised we would finish college together and graduate side by side. But now, in our 4th year, everything changed — all because of our thesis and capstone project.</p>
-                    <p>I poured so much of myself into our work. I built the first version of our system from the beginning. I traveled all the way to Burias to gather the data we needed — that trip was tiring and far from home, but I did it for our group. I finished my tasks early so we would not be rushed, and I even helped my friends with their work so no one would struggle or fall behind. When I got sick from all the pressure and had to go home to rest, I missed some consultations — and that was when everything fell apart. Instead of asking how I was or waiting for me to get better, they removed me from the group completely. They acted like I gave nothing at all, like I never stayed up late, traveled far, or did extra work. It hurt so much — and this story helped me see that what happened is not what real friendship is. That is why this means so much to me.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-serif-title text-xl font-bold text-white mb-4">Lessons That Truly Stuck With Me</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
-                            <h5 class="font-semibold text-amber-300 text-sm mb-1">True friendship does not fade when things get hard</h5>
-                            <p class="text-xs text-slate-300">The four friends in Book 2 did not leave each other just because danger came. They stayed and helped. I learned that people who truly care for you do not turn their backs the moment you cannot be there or when you are going through something difficult. They check on you. They wait. They understand.</p>
-                        </div>
-                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
-                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Your hard work should never be erased</h5>
-                            <p class="text-xs text-slate-300">Book 1 shows how people can forget everything you have given once they start listening to rumors or believing wrong things. I realized that what I did — building the system, collecting data, helping everyone — was real and valuable. No one can make those things disappear just because they choose to ignore them.</p>
-                        </div>
-                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
-                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Friendship works both ways</h5>
-                            <p class="text-xs text-slate-300">I always gave my best — I helped, I understood, I carried extra work — but I did not get the same in return. I learned that being a friend is not just about what you can do for others. It is also about them caring for you. If people only value you when you are useful, that is not friendship — that is being used.</p>
-                        </div>
-                        <div class="glass-card rounded-xl p-5 border-amber-500/20 bg-white/5">
-                            <h5 class="font-semibold text-amber-300 text-sm mb-1">Every person’s part matters</h5>
-                            <p class="text-xs text-slate-300">In Book 2, each animal had a different strength, and all were needed to help one another. My skills and effort were important to our project too. I should not have to beg to be seen or recognized for what I did.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl p-6 border-purple-500/30 bg-purple-950/20">
-                    <h4 class="font-serif-title text-lg font-bold text-purple-300 mb-2">What I Truly Realized</h4>
-                    <p class="italic text-slate-200">"Going through this experience made these stories feel less like lessons in a book and more like something I lived myself. I felt sad, confused, and afraid — afraid I would lose my chance to graduate, afraid my work would be taken credit for, and hurt that people I loved for years could treat me like I never mattered. I gave my time, my energy, and even my health for our group. And still, they chose to push me aside. But as I thought about these stories, I realized something important: I did not fail our friendship. I kept my promises. I gave my best. I was loyal. It was they who forgot what being a friend really means.<br><br>I will still be kind and helpful — that is just who I am. But now I know I deserve the same care I give. I know that real friends will see my effort, believe in me, and stand by me even when things are messy. I may have lost these friends, but I found something more important: I know my worth. I will finish my studies, I will graduate, and I will succeed — not because of them, but because of me. And one day, I will surround myself with people who stay, who value me, and who remember that loyalty is the most precious thing we can share."</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL 2: SECTION 2 LITERARY ANALYSES MODAL -->
-    <div id="storyModal" onclick="handleBackdropClick(event)" class="fixed inset-0 z-50 hidden bg-slate-950/85 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-        <div class="glass-card border border-amber-500/30 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 space-y-6 relative shadow-2xl my-8">
-            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 text-slate-300 hover:text-white hover:bg-rose-600 transition flex items-center justify-center">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-
-            <div class="space-y-2 pr-8">
-                <span id="modalLens" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40 text-xs font-semibold tracking-wide">
-                    Lens Name
-                </span>
-                <h3 id="modalTitle" class="font-serif-title text-2xl sm:text-3xl font-bold text-white mt-2">
-                    Masterpiece Title
-                </h3>
-                <p id="modalAuthor" class="text-xs text-amber-400/90 font-medium">by Author Name</p>
-            </div>
-
-            <div class="rounded-2xl overflow-hidden h-48 sm:h-64 border border-white/10 relative">
-                <img id="modalImage" src="" alt="Masterpiece Artwork" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-            </div>
-
-            <div class="space-y-6 text-slate-300 text-sm leading-relaxed border-t border-white/10 pt-4">
-                <div>
-                    <h4 class="font-serif-title text-base font-bold text-amber-300 mb-2 flex items-center">
-                        <i data-lucide="book-open" class="w-4 h-4 mr-2"></i> Story Overview & Plot Script
-                    </h4>
-                    <p id="modalStoryOverview" class="text-slate-300 leading-relaxed text-xs sm:text-sm bg-white/5 p-4 rounded-xl border border-white/5">
-                        Overview text...
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-serif-title text-base font-bold text-purple-300 mb-2 flex items-center">
-                        <i data-lucide="brain" class="w-4 h-4 mr-2"></i> Literary Analysis & Applied Lens
-                    </h4>
-                    <p id="modalAnalysisText" class="text-slate-300 leading-relaxed text-xs sm:text-sm bg-white/5 p-4 rounded-xl border border-white/5">
-                        Analysis text...
-                    </p>
-                </div>
-
-                <div>
-                    <h4 class="font-serif-title text-base font-bold text-amber-400 mb-2 flex items-center">
-                        <i data-lucide="sparkles" class="w-4 h-4 mr-2"></i> Key Learnings & Takeaways
-                    </h4>
-                    <ul id="modalLearningsList" class="list-disc list-inside space-y-1 text-xs sm:text-sm text-slate-300 bg-white/5 p-4 rounded-xl border border-white/5">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JavaScript Data & Interactivity -->
     <script>
-        const learningData = [
-            {
-                title: "1. Elements of Literature",
-                content: "Throughout the Great Books course, I learned so many important things that helped me understand stories and life in new ways. First, we studied the Elements of Literature. These are the basic parts that make every story complete — characters, setting, plot, conflict, and theme. I learned that characters are the people in the story; setting is where and when it happens; plot is the sequence of events; conflict is the problem the characters face; and theme is the main message or lesson about life. Knowing these elements helped me see how every part of a story connects and why each one is important."
-            },
-            {
-                title: "2. Literary Devices",
-                content: "Next, we learned about Literary Devices. These are special tools writers use to make their stories meaningful, beautiful, and deep. I learned about symbols — where one thing stands for a bigger idea, like a flower standing for growth or a butterfly standing for change. We also learned about metaphors, comparisons, repetition, and imagery that helps us see and feel what the writer wants to say. These devices showed me that stories do not always explain things directly — sometimes they show us deeper truths through these special ways."
-            },
-            {
-                title: "3. Literary Lenses",
-                content: "Then we studied Literary Lenses. These are like different ways of looking at a story to understand it more deeply. Instead of just reading to know what happens, we can look through a lens to find more meaning. For example, the moral lens helps us see lessons about right and wrong; the social lens shows how people treat each other; and the spiritual lens helps us see messages about faith, hope, and purpose. I learned that one story can have many meanings, and these lenses help me find lessons that I can use in my own life."
-            },
-            {
-                title: "4. Analysis of Short Literary Masterpieces",
-                content: "We also read and analyzed wonderful stories — \"Hope for the Flowers\" and \"Everywhere in a Garden\". These stories are simple but very powerful. Hope for the Flowers taught me about growing up, finding your own way, and not giving up even when things are hard. Everywhere in a Garden showed me that every plant has its own time to grow and bloom, just like every person. While reading these, I practiced finding literary elements, identifying devices like symbols, and using lenses to understand the deeper messages."
-            },
-            {
-                title: "5. Overall Course Synthesis",
-                content: "Overall, this course taught me that literature is not just about reading books or finishing schoolwork. It is about understanding people, cultures, and life itself. I developed better thinking skills — I learned to observe carefully, ask questions, connect stories to real life, and explain what I understand clearly. I learned that every story, no matter how simple, has something valuable to teach us."
-            }
-        ];
+        lucide.createIcons();
 
-        const reflectionData = [
-            {
-                title: "Growth as a Reader",
-                text: "Studying Great Books has been a meaningful journey for me. Before this course, I used to read stories just to finish them or answer assignments. I did not look for deeper meanings or connect them to my own life. But as we went through the lessons, my understanding and appreciation changed completely. I began to see that every story is not just words on a page — it carries real feelings, true experiences, and lessons that still guide us today. I learned that literature shows what people have lived, believed, and hoped for across time, and the truths we find in books can help us understand ourselves and the people around us better."
-            },
-            {
-                title: "Overcoming Reading Challenges",
-                text: "Along the way, I faced some challenges. Some stories did not say things directly, and I had to think carefully to understand the symbols and hidden messages. At first, it was also hard to identify literary devices or know which lens to use when analyzing a work. I overcame these difficulties by reading slowly, taking notes, and connecting what I read to my own life — to my family, my friends, my struggles, and my dreams. When I linked the stories to what I already knew and felt, everything became clearer and easier to understand."
-            },
-            {
-                title: "Most Influential Lens",
-                text: "Among all the approaches we learned, the moral and life-centered lens influenced me the most. This lens looks at lessons about right and wrong, personal growth, and what truly matters in life. It helped me see that no one is perfect — not the characters in the stories, and not us either. It showed me that making mistakes does not mean we are bad people; it means we are human, and we can always choose to do better. This approach touched me deeply because it does not just judge — it understands, and it gives hope that we can change and grow at any time."
-            },
-            {
-                title: "Realizations About Life and Human Nature",
-                text: "Through these lessons and stories, I gained important realizations about life, people, and myself. From Hope for the Flowers and Everywhere in a Garden, I learned that growth takes time and everyone has their own pace. I should not rush myself or compare my journey to others, just as flowers do not all bloom at the same moment. From other stories, I saw that true friendship means staying loyal and fair, even when things get hard. I learned that people are complex — we all have strengths and weaknesses, joys and sorrows — and we should be kind to one another because we do not always know what someone else is going through. I realized that doing the right thing is not always easy, but it is always worth it."
-            },
-            {
-                title: "Application in Personal Life & IT Career",
-                text: "I will carry all these lessons with me in every part of my life. Personally, I will value myself more, trust my own path, and surround myself with people who stay true. I will be kind, patient, and honest, even when others are not. In my studies, I will work with purpose, give my best not just for grades but for real learning, and stand up for what is fair. In my future career as an IT professional, I will remember that technology is made for people. I will use my skills to help and respect others, to build things that serve everyone well, and to always treat people with dignity. Great Books taught me that being a good person is just as important as being skilled — and that is the most valuable lesson I will take with me forever."
-            }
-        ];
-
-        function switchTab(index) {
-            const buttons = document.querySelectorAll('#learningTabs .tab-btn');
-            buttons.forEach((btn, i) => {
-                if (i === index) {
-                    btn.className = "tab-btn active px-4 py-2 rounded-xl bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition";
-                } else {
-                    btn.className = "tab-btn px-4 py-2 rounded-xl bg-white/10 text-slate-300 hover:text-white font-semibold text-xs sm:text-sm transition";
-                }
-            });
-
-            const contentDiv = document.getElementById('tabContent');
-            contentDiv.innerHTML = `
-                <h3 class="font-serif-title text-xl font-bold text-amber-300 mb-3">${learningData[index].title}</h3>
-                <p class="leading-relaxed text-slate-200 text-sm sm:text-base">${learningData[index].content}</p>
-            `;
-        }
-
-        function selectReflectionStep(index) {
-            const steps = document.querySelectorAll('.refl-step');
-            steps.forEach((step, i) => {
-                if (i === index) {
-                    step.className = "refl-step active p-3 rounded-xl bg-purple-600 text-white font-semibold text-xs text-center transition border border-purple-400/40";
-                } else {
-                    step.className = "refl-step p-3 rounded-xl bg-white/5 text-slate-400 font-semibold text-xs text-center transition border border-white/10";
-                }
-            });
-
-            const displayDiv = document.getElementById('reflectionDisplay');
-            displayDiv.innerHTML = `
-                <h3 class="font-serif-title text-xl font-bold text-purple-300 mb-3">${reflectionData[index].title}</h3>
-                <p class="leading-relaxed text-slate-200 text-sm sm:text-base">${reflectionData[index].text}</p>
-            `;
-        }
-
-        function openFavoriteModal() {
-            document.getElementById('favoriteModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
-        }
-
-        function closeFavoriteModal() {
-            document.getElementById('favoriteModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function handleFavBackdrop(event) {
-            if (event.target.id === 'favoriteModal') {
-                closeFavoriteModal();
-            }
-        }
-
-        const storiesData = {
-            1: {
+        // 7 Literary Analyses Data
+        const analysesData = {
+            job: {
                 title: "The Voice Out of the Whirlwind",
                 author: "From the Book of Job (Biblical text)",
                 lens: "Religious / Moral Criticism",
                 image: "job.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1509021436468-d51039747127?auto=format&fit=crop&q=80&w=600",
-                overview: "The Book of Job tells the narrative of Job, a righteous man who suffers catastrophic losses of family, health, and wealth without having committed any wickedness. Throughout his trials, Job questions why he must suffer while his friends insist he must have sinned. Finally, God answers Job directly out of a powerful whirlwind, speaking not with direct answers about suffering, but by revealing the immense majesty, order, and complexity of creation that humans can barely comprehend.",
-                analysis: "The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems, but this story teaches me that no matter how skilled I become, I cannot understand everything, especially the deeper mysteries of life, suffering, and purpose. Job’s experience shows that true faith and humility mean trusting God and accepting our limitations, knowing that not every question has an immediate technical answer.",
-                learnings: [
-                    "Human wisdom and technical knowledge have inherent limits.",
-                    "True faith requires humility and trust in divine providence during unexplained trials.",
-                    "Skill and intellect should be paired with awe and respect for the greater mysteries of existence."
-                ]
+                summary: "Job suffers immense loss and struggles to understand why an innocent person suffers. God responds not with direct answers, but from a whirlwind, displaying the vast complexity and grandeur of creation.",
+                insights: "The Voice Out of the Whirlwind reminds us that human knowledge has clear limits, and true wisdom begins with humility. As an IT student, I spend much of my time learning how systems work, how to code, and how to solve problems, but this story teaches me that no matter how skilled I become, I cannot understand everything, especially the deeper mysteries of life, suffering, and purpose. Job’s experience shows that true faith and humility mean trusting God and accepting our limitations, knowing that not every question has an immediate technical answer."
             },
-            2: {
+            panchatantra: {
                 title: "Panchatantra — Books 1 & 2",
                 author: "Attributed to Vishnu Sharma",
                 lens: "Moral / Didactic Criticism",
                 image: "panchatantra.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600",
-                overview: "The Panchatantra is an ancient Indian collection of interrelated animal fables designed to instruct young princes in wise conduct and statecraft. Book 1 ('The Loss of Friends') details how a cunning jackal named Damanaka uses rumors, deception, and jealousy to destroy the profound friendship between a lion king and a bull. Book 2 ('The Winning of Friends') highlights the power of solidarity through four unlikely companions — a crow, a mouse, a turtle, and a deer — who combine their unique skills to save one another from hunter traps.",
-                analysis: "Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow, its a reminder that misinformation harms not just individuals but whole groups. Book 2 shows the opposite: four very different animals working together to survive, proving that true strength comes from unity, loyalty, and standing by each other. This teaches me that in both life and tech projects, open communication and trust are key to success.",
-                learnings: [
-                    "Guarding against rumors and malicious gossip preserves trust and unity.",
-                    "Diverse individual talents, when combined, create unbeatable team strength.",
-                    "Mutual loyalty and quick joint problem-solving overcome insurmountable obstacles."
-                ]
+                summary: "Book 1 depicts how a strong bond between a lion and a bull is ruined by a scheming jackal's rumors. Book 2 shows four distinct animal friends working together seamlessly to rescue one another from danger.",
+                insights: "Panchatantra uses simple fables to teach powerful lessons about friendship, trust, and teamwork. Book 1 shows how easily relationships can break when people believe rumors and allow division to grow, a reminder that misinformation harms not just individuals but whole groups. Book 2 shows the opposite: four very different animals working together to survive, proving that true strength comes from unity, loyalty, and standing by each other. This teaches me that in both life and tech projects, open communication and trust are key to success."
             },
-            3: {
+            ramayana: {
                 title: "Ramayana",
                 author: "Attributed to Valmiki",
                 lens: "Ethical / Cultural Criticism",
                 image: "ramayana.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=600",
-                overview: "The Ramayana follows Prince Rama, the avatar of virtue and righteousness (Dharma), who accepts a fourteen-year exile into the forest to honor his father's promise. When his wife Sita is abducted by the demon king Ravana, Rama embarks on an epic quest supported by his loyal brother Lakshmana and the devoted monkey-warrior Hanuman to defeat evil and restore ethical order to the world.",
-                analysis: "The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain, even when the path is difficult. His dedication to duty inspires me to carry out my responsibilities with honesty, whether in my personal life, academic work, or future career in IT. It reminds me that short cuts and easy choices can never replace character and moral principle.",
-                learnings: [
-                    "Dharma (duty and righteous conduct) must guide all decisions over personal comfort.",
-                    "Integrity means keeping promises even when faced with severe personal sacrifice.",
-                    "Pride and unlawful desires lead to inevitable downfall, while honor endures."
-                ]
+                summary: "Prince Rama accepts 14 years of exile to honor his father's vow, remaining steadfastly righteous even when his wife Sita is abducted by Ravana.",
+                insights: "The Ramayana stands as a guide to living with honor, duty, and integrity. Rama shows that staying true to one’s word and doing what is right matters more than comfort, power, or personal gain, even when the path is difficult. His dedication to duty inspires me to carry out my responsibilities with honesty, whether in my personal life, academic work, or future career in IT. It reminds me that short cuts and easy choices can never replace character and moral principle."
             },
-            4: {
+            mahabharata: {
                 title: "Mahabharata",
                 author: "Attributed to Vyasa",
                 lens: "Ethical / Humanist Criticism",
                 image: "mahabharata.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&q=80&w=600",
-                overview: "The Mahabharata is a colossal epic narrating the devastating Kurukshetra War between two sets of royal cousins, the righteous Pandavas and the greedy Kauravas. Entwined within its narrative is the Bhagavad Gita, in which Lord Krishna counsels Prince Arjuna on duty, righteousness, detachment from results, and the complex nature of human morality in times of conflict.",
-                analysis: "The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes. The story teaches that loyalty to family is important, but loyalty to what is just matters more. Through the concept of Karma, it reminds me that every action has consequences. As a future tech developer, this inspires me to think carefully about the impact of what I create, ensuring my work always serves the truth and fair principles.",
-                learnings: [
-                    "Perform duties with excellence without toxic attachment to ego or specific outcomes.",
-                    "Every moral choice carries consequences (Karma) that shape future realities.",
-                    "Justice and truth outweigh unconditional allegiance to misguided loyalty."
-                ]
+                summary: "A massive epic portraying a devastating dynastic war between the Pandavas and Kauravas, highlighting complex moral dilemmas and the law of Karma.",
+                insights: "The Mahabharata reveals that life and choices are rarely simple, there is often no purely good or purely evil side, and even honorable people make mistakes. The story teaches that loyalty to family is important, but loyalty to what is just matters more. Through the concept of Karma, it reminds me that every action has consequences. As a future tech developer, this inspires me to think carefully about the impact of what I create, ensuring my work always serves the truth and fair principles."
             },
-            5: {
+            odyssey: {
                 title: "The Odyssey",
                 author: "Attributed to Homer",
                 lens: "Archetypal Criticism",
                 image: "odyssey.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&q=80&w=600",
-                overview: "The Odyssey recounts the ten-year journey of the Greek hero Odysseus as he struggles to return home to Ithaca after the fall of Troy. Facing monstrous opponents like the Cyclops Polyphemus, deadly temptations like the Sirens, and divine wrath, Odysseus relies on his wits, intellect, and endurance to reunite with his faithful wife Penelope and son Telemachus.",
-                analysis: "The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays, yet he keeps moving forward because he holds fast to what he loves. His story reminds me that success requires patience, resilience, and self-control. When I encounter failures or setbacks in my studies or personal projects, I am encouraged to stay focused on my ultimate goal and never give up.",
-                learnings: [
-                    "Perseverance and sharp problem-solving overcome brute force and adversity.",
-                    "Resisting short-term temptations keeps one focused on ultimate life goals.",
-                    "Life is a long journey of transformation that tests and refines character."
-                ]
+                summary: "Odysseus embarks on a ten-year voyage home after the Trojan War, braving monsters, sirens, and wrathful gods through intellect and willpower.",
+                insights: "The Odyssey is more than an adventure story, it is about the long, hard journey toward becoming the person we want to be. Odysseus faces storms, temptations, and delays, yet he keeps moving forward because he holds fast to what he loves. His story reminds me that success requires patience, resilience, and self-control. When I encounter failures or setbacks in my studies or personal projects, I am encouraged to stay focused on my ultimate goal and never give up."
             },
-            6: {
+            lesmiserables: {
                 title: "Les Misérables",
                 author: "Victor Hugo",
                 lens: "Social / Moral Criticism",
                 image: "lesmiserables.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=600",
-                overview: "Set in 19th-century France, Les Misérables follows Jean Valjean, an ex-convict imprisoned for 19 years for stealing a loaf of bread. Transformed by the extraordinary mercy of Bishop Myriel, Valjean dedicates his life to honest work, raising the orphaned Cosette, and protecting others while continuously hunted by the unyielding inspector Javert, who believes criminals can never reform.",
-                analysis: "Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made or how society labels us, we can always choose to become better. It challenges me to see people with compassion rather than strict judgment, reminding me that true progress; whether personal, societal, or technological, should aim to lift others up and show understanding.",
-                learnings: [
-                    "Compassion and grace have far greater power to redeem human lives than rigid legalism.",
-                    "No person is beyond redemption; choices define character, not past mistakes.",
-                    "Social systems must be built with empathy to protect and elevate the vulnerable."
-                ]
+                summary: "Ex-convict Jean Valjean seeks redemption through acts of love and sacrifice in 19th-century France, pursued relentlessly by Inspector Javert.",
+                insights: "Les Misérables shows that mercy, kindness, and love have the power to change lives more than punishment or judgment ever can. Through Jean Valjean, I see that no matter what mistakes we have made or how society labels us, we can always choose to become better. It challenges me to see people with compassion rather than strict judgment, reminding me that true progress; whether personal, societal, or technological, should aim to lift others up and show understanding."
             },
-            7: {
+            psalm91: {
                 title: "Psalm 91",
                 author: "From the Holy Scriptures",
                 lens: "Religious / Spiritual Criticism",
                 image: "psalm91.jpg",
-                fallbackImage: "https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&q=80&w=600",
-                overview: "Psalm 91 is a poetic biblical prayer of protection, comfort, and divine shelter. It depicts God as a fortress, a refuge, and a protecting wing that guards the faithful against secret snares, pestilence, and nighttime terrors, promising divine presence and deliverance to those who love and trust Him.",
-                analysis: "Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come, but that we will face them with confidence, knowing God is our refuge. As a student carrying the weights of academic stress and personal challenges, this Psalm reassures me that peace comes from trusting in divine protection and staying rooted in hope.",
-                learnings: [
-                    "Faith provides an unshakeable spiritual refuge amidst life's chaos and anxieties.",
-                    "Trusting in divine protection dispels fear and restores inner fortitude.",
-                    "Inner peace is found by grounding one's heart in hope and spiritual conviction."
-                ]
+                summary: "A powerful prayer declaring divine shelter, protection from hidden traps and plagues, and absolute peace under God's wings.",
+                insights: "Psalm 91 offers comfort and strength by reminding us that we are never alone, even when fear, uncertainty, or danger surrounds us. It teaches that faith does not mean no hardships will come, but that we will face them with confidence, knowing God is our refuge. As a student carrying the weights of academic stress and personal challenges, this Psalm reassures me that peace comes from trusting in divine protection and staying rooted in hope."
             }
         };
 
-        function openModal(id) {
-            const data = storiesData[id];
+        // Open Section 2 Analysis Modal
+        function openAnalysisModal(key) {
+            const data = analysesData[key];
             if (!data) return;
 
-            document.getElementById('modalLens').textContent = data.lens;
-            document.getElementById('modalTitle').textContent = data.title;
-            document.getElementById('modalAuthor').textContent = data.author;
-
-            const imgElement = document.getElementById('modalImage');
-            imgElement.src = data.image;
-            imgElement.onerror = function() {
-                this.src = data.fallbackImage;
-            };
-
-            document.getElementById('modalStoryOverview').textContent = data.overview;
-            document.getElementById('modalAnalysisText').textContent = data.analysis;
-
-            const list = document.getElementById('modalLearningsList');
-            list.innerHTML = '';
-            data.learnings.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = item;
-                list.appendChild(li);
-            });
-
-            document.getElementById('storyModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-            lucide.createIcons();
+            const modalBody = document.getElementById('modal-body');
+            modalBody.innerHTML = `
+                <div class="h-56 sm:h-64 rounded-2xl overflow-hidden border border-amber-500/30 mb-4">
+                    <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+                </div>
+                <span class="px-3 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-semibold">${data.lens}</span>
+                <h3 class="font-serif-title text-2xl sm:text-3xl font-bold text-white mt-2">${data.title}</h3>
+                <p class="text-xs text-amber-400/80 mb-4">${data.author}</p>
+                
+                <div class="space-y-4 text-slate-300 text-sm leading-relaxed">
+                    <div class="glass-card rounded-xl p-4 border-amber-500/20">
+                        <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mb-1">Story Summary</h4>
+                        <p>${data.summary}</p>
+                    </div>
+                    <div class="glass-card rounded-xl p-4 border-amber-500/20">
+                        <h4 class="font-bold text-amber-300 text-xs uppercase tracking-wider mb-1">My Personal Insights</h4>
+                        <p>${data.insights}</p>
+                    </div>
+                </div>
+            `;
+            document.getElementById('analysis-modal').classList.remove('hidden');
         }
 
-        function closeModal() {
-            document.getElementById('storyModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
+        function closeAnalysisModal() {
+            document.getElementById('analysis-modal').classList.add('hidden');
         }
 
-        function handleBackdropClick(event) {
-            if (event.target.id === 'storyModal') {
-                closeModal();
+        // Open Section 3 Favorite Masterpiece Modal
+        function openFavoriteModal() {
+            document.getElementById('favorite-modal').classList.remove('hidden');
+        }
+
+        function closeFavoriteModal() {
+            document.getElementById('favorite-modal').classList.add('hidden');
+        }
+
+        // Section 4 Tabs Switcher
+        function switchTab(num) {
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`tab-content-${i}`).classList.add('hidden');
+                const btn = document.getElementById(`tab-btn-${i}`);
+                btn.className = "px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-slate-800 text-slate-300 hover:text-white";
             }
+            document.getElementById(`tab-content-${num}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`tab-btn-${num}`);
+            activeBtn.className = "px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-amber-500 text-black";
         }
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-                closeFavoriteModal();
+        // Section 5 Stepper Switcher
+        function switchStep(num) {
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`step-content-${i}`).classList.add('hidden');
+                const btn = document.getElementById(`step-btn-${i}`);
+                btn.className = "p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-slate-800/80 text-slate-300 hover:text-white";
             }
-        });
-
-        window.onload = function() {
-            switchTab(0);
-            selectReflectionStep(0);
-            lucide.createIcons();
-        };
+            document.getElementById(`step-content-${num}`).classList.remove('hidden');
+            const activeBtn = document.getElementById(`step-btn-${num}`);
+            activeBtn.className = "p-3 rounded-xl border border-purple-500/30 text-xs font-semibold text-center transition-all bg-purple-600 text-white";
+        }
     </script>
 </body>
 </html>
